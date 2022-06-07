@@ -33,9 +33,6 @@
       <p style="margin-right: 20px;">Destination:</p>
       <input placeholder="Enter City" type="text">
     </div>
-<!-- This is where the map is embedded. please do not delete this div tag-->
-    <div id="map"></div>
-
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -104,13 +101,13 @@
     </div>
   </div>
     
-   
-
   <div class="row justify-content-center align-items-center my-4">
+    <h3>Map your destination</h3>
+  </div>
+  <div class="row justify-content-center align-items-center my-4 pb-5">
   <div class="mapouter ">
     <div class="gmap_canvas">
-      <iframe width="900" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-      <a href="#"></a>
+      <div id="map"></div>
       <br>
     </div>
   </div>
@@ -123,6 +120,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-   
+<!-- This is where the map is embedded. please do not delete this div tag-->
+
 </body>
 </html>
