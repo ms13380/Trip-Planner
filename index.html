@@ -29,53 +29,75 @@
 
   <div class="container">
     <h1 class="week">Your Trips</h1>
-    <div class="row"> 
-      <p>Destination:</p>
-      <input placeholder="destination" type="text">
+    <div class="row justify-content-center align-items-center my-4"> 
+      <p style="margin-right: 20px;">Destination:</p>
+      <input placeholder="Enter City" type="text">
     </div>
   </div>
 
   <div class="container">
-    <h1>Travel Dates</h1>
-    <div class="row">
+    <div class="row justify-content-center align-items-center">
+      <h1>Travel Dates</h1>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <i class="fas fa-angle-left prev"></i>
+        <h3>Month</h3>
+      <i class="fas fa-angle-right next"></i>
+    </div>
+    <div class="row justify-content-center align-items-center my-4">
+      
       <div class="card">
         <p class="card-header"><strong>Monday</strong></p>
-        <div class="card-body">Basic card</div>
+        <div class="card-body">Mon Jun 6th</div>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
+
       <div class="card">
         <p class="card-header"><strong>Tuesday</strong></p>
-        <div class="card-body">Basic card</div>
+        <div class="card-body">Tue Jun 7th</div>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
+
       <div class="card">
         <p class="card-header"><strong>Wednesday</strong></p>
-        <div class="card-body">Basic card</div>
+        <div class="card-body">Wed Jun 8th</div>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
+
       <div class="card">
         <p class="card-header"><strong>Thursday</strong></p>
-        <div class="card-body">Basic card</div>
+        <div class="card-body">Thu Jun 9th</div>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
+
       <div class="card">
         <p class="card-header"><strong>Friday</strong></p>
-        <div class="card-body">Basic card</div>
+        <div class="card-body">Fri Jun 10th</div>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
+
       <div class="card">
         <p class="card-header"><strong>Saturday</strong></p>
-        <div class="card-body">Basic card</div>
+        <div class="card-body">Sat Jun 11th</div>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
-        <div class="card">
-          <p class="card-header"><strong>Sunday</strong></p>
-        <div class="card-body">Basic card</div>
-        </div>
+
+      <div class="card">
+        <p class="card-header"><strong>Sunday</strong></p>
+        <div class="card-body">Sun Jun 12th</div>
+        <button type="button" class="btn btn-primary">Select</button>
+      </div>
+
+    </div>
+    <div class="row justify-content-center align-items-center my-4">
+      <button type="button" class="btn btn-primary">Let's Go!</button>
     </div>
   </div>
     
-  <div class="row">
-    <button class="button">Let's Go!</button>
-  </div> 
-  
-  <div id="map">
+   
+  <div class="container">
+    <div id="map"></div>
   </div>
-
 
 
 
