@@ -29,6 +29,21 @@
 #map {
     height: 100%;
 }
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:500px;
+    width:900px;
+        }
+
+.gmap_canvas {
+    overflow:hidden;
+    background:none;
+    height:500px;
+    width:900px;
+                }
+
 html,
 body {
   height: 100%;

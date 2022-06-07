@@ -7,6 +7,7 @@ var city = "London, uk";
 
 
 
+
 // API Calls 
 
 
