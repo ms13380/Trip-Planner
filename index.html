@@ -33,6 +33,17 @@
       <p style="margin-right: 20px;">Destination:</p>
       <input placeholder="Enter City" type="text">
     </div>
+<!-- This is where the map is embedded. please do not delete this div tag-->
+    <div id="map"></div>
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+    <!-- Script required to run map. Do not remove-->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer></script>
   </div>
 
   <div class="container">
@@ -75,7 +86,6 @@
         <div class="card-body">Fri Jun 10th</div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
-
       <div class="card">
         <p class="card-header"><strong>Saturday</strong></p>
         <div class="card-body">Sat Jun 11th</div>
