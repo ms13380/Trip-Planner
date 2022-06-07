@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <title>Trip Planner with weather</title>
   <link
       rel="stylesheet"
@@ -22,7 +22,7 @@
       rel="stylesheet"
     />
     <!-- Link CSS File-->
-    <link href="assets/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
     
 </head>
 <body>
@@ -95,18 +95,24 @@
   </div>
     
    
-  <div class="container">
-    <div id="map"></div>
+
+  <div class="row justify-content-center align-items-center my-4">
+  <div class="mapouter ">
+    <div class="gmap_canvas">
+      <iframe width="900" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      <a href="#"></a>
+      <br>
+    </div>
   </div>
+</div>
 
-
-
-<script type="module" src="./assets/index.js"></script>
+<script src="./assets/js/index.js"></script>
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3oMEhRXjU69EfrjDpF97lFWqcv8fZyw&callback=initMap&v=weekly"
       defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="./assets/js/script.js"></script>
+   
 </body>
 </html>
