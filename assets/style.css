@@ -1,5 +1,33 @@
+.week{
+    border: 1px solid var(--N-A);
+    height: 100px;
+    width: 960px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lightblue);
+
+}
+
+.day {
+    border-bottom: 1px solid var(--N-A);
+    border-right: 1px solid var(--N-A);
+    text-align: center;
+    padding-top: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 200ms, color 200ms;
+}
+
+.travel-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5,1fr);
+    height: 50rem;
+    width: 60rem;
+}
 #map {
-  height: 100%;
+    height: 100%;
 }
 html,
 body {
