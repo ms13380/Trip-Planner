@@ -5,7 +5,8 @@
 
 let latCoord
 let longCoord
-var destAddress = $('#cityInput').val()
+var destAddress = $('#destCity').val()
+var submitBtn = $('#submitAddress')
 var directionsService
 var coordLongitude
 var coordLatitude
@@ -27,9 +28,28 @@ navigator.geolocation.getCurrentPosition(
     latPos = pos.lat
     longPos = pos.lng
     startCityField = `${latPos},${longPos}`
+// set starting city to the current position by default. 
     $('#startCity').val(`${latPos},${longPos}`)
   })
 })
+
+submitBtn.click(getStartCity);
+function getStartCity() {
+  startCityField = $('#startCity').val()
+  destAddress = $('#destCity').val()
+  debugger;
+  const directionsService = new google.maps.DirectionsService();
+  // const directionsRenderer = new google.maps.directionsRenderer({ map: map});
+  directionsService.route( {
+    origin: startCityField,
+    destination: destAddress,
+    travelMode: 'DRIVING'
+  }, (directionsResult, directionsStatus) => {
+    console.log(directionsResult)
+    console.log(directionsStatus)
+  }
+  
+  )}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
