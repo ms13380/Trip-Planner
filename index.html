@@ -29,17 +29,28 @@
 
   <div class="container">
     <h1 class="week">Your Trips</h1>
-    <div class="row justify-content-around align-items-center my-4"> 
-      <form id="from-input">
+    
+    
+     <div class="row justify-content-around align-items-center my-4"> 
+      <div class="col-sm-4"><form id="from-input">
         <p>Coming From:</p>
-        <input placeholder="Enter City" type="text">
-      </form>
+        <input id="startCity" placeholder="Enter City" type="text">
+      </form></div>
+      <div class="col-sm-4 p-0">
       <form id="too-input">
         <p>Destination:</p>
-        <input placeholder="Enter City" type="text">
+        <input id="destCity" placeholder="San Diego,CA" type="text">
       </form>
     </div>
-  </div>
+    <div class="col-sm-4">
+      <button class="btn btn-primary ml-0" id="submitAddress">submit</button>
+      </div>
+    </div>
+    
+
+  
+  
+
 
   <div class="container">
     <div class="row justify-content-center align-items-center">
@@ -127,31 +138,79 @@
           <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
         </div>
       </div>
+<<<<<<< HEAD
     </div>
+=======
+      
+           <button type="button" class="btn btn-primary">Select</button>
+    </div>
+
+    <div class="card">
+      <p id="6" class="card-header"><strong>Saturday Jun 11th</strong></p>
+      <div class="card-body">
+        <h4 id="city-6" class="mb-1 sfw-normal">New York, US</h4>
+        <p id="temp-6" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+        <p>Feels like: <strong>4.37°C</strong></p>
+        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+        <div class="d-flex flex-row align-items-center">
+          <p class="mb-0 me-4">Sunny</p>
+          <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+        </div>
+
+
+         <div class="card">
+        <p class="card-header"><strong>Saturday</strong></p>
+        <div class="card-body">Sat Jun 11th</div>
+        <button type="button" class="btn btn-primary">Select</button>
+      </div>
+      <button type="button" class="btn btn-primary">Select</button>
+    </div>
+
+    <div class="card">
+      <p id="7" class="card-header"><strong>Sunday Jun 12th</strong></p>
+      <div class="card-body">
+        <h4 id="city-7" class="mb-1 sfw-normal">New York, US</h4>
+        <p id="temp-7" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+        <p>Feels like: <strong>4.37°C</strong></p>
+        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+        <div class="d-flex flex-row align-items-center">
+          <p class="mb-0 me-4">Sunny</p>
+          <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary">Select</button>
+    </div> 
+>>>>>>> bb4fb4ad2f71d4ee603cad221924c279c37c0b6f
   </main>
 
   <div class="row justify-content-center align-items-center my-4">
       <button type="button" class="btn btn-primary">Let's Go!</button>
   </div>
-  
 
   <div class="row justify-content-center align-items-center my-4">
+    <h3>Map your destination</h3>
+  </div>
+  <!--Map data goes here. Please do not move.-->
+  <div class="row justify-content-center align-items-center my-4 pb-5">
   <div class="mapouter ">
     <div class="gmap_canvas">
-      <iframe width="900" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-      <a href="#"></a>
+      <div id="map"></div>
       <br>
     </div>
   </div>
 </div>
 
-<script src="./assets/js/index.js"></script>
+
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3oMEhRXjU69EfrjDpF97lFWqcv8fZyw&callback=initMap&v=weekly"
       defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-   
+    <script src="./assets/js/index.js"></script>
+    <script src="assets/script.js"></script>
+
 </body>
 </html>
