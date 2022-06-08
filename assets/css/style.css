@@ -1,0 +1,27 @@
+
+#map {
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    height:500px;
+    width:900px;
+        }
+
+.gmap_canvas {
+    overflow:hidden;
+    background:none;
+    height:500px;
+    width:900px;
+                }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
