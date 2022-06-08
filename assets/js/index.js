@@ -2,6 +2,16 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
+
+let latCoord
+let longCoord
+var destAddress = $('#cityInput').val()
+var directionsService
+var coordLongitude
+var coordLatitude
+var weatherApiRequest
+weatherApiRequest = `https://api.openweathermap.org/data/2.5/weather?lat=${coordLatitude}&lon=${coordLongitude}&appid=5e4e76067c9efbd530372ae03978df87`
+
 let map, infoWindow;
 
 function initMap() {
@@ -53,3 +63,45 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 window.initMap = initMap;
+
+function turqouise() {
+  selectedCity = $('#cityInput').val();
+  cityArray = selectedCity.split(' ');
+  cityName = selectedCity.split(",")[0];
+  stateName = selectedCity.split(",")[1];
+
+  console.log(cityName)
+  console.log(stateName)
+ coordApiRequest = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateName}$"&appid=5e4e76067c9efbd530372ae03978df87`
+
+fetch(coordApiRequest)
+.then( function (response) {
+  return response.json();
+})
+.then(function(data) {
+  console.log(data);
+console.log(data[0])
+coordLatitude = data[0].lat;
+coordLongitude = data[0].lon;
+})
+.then(function() {
+  const uluru = `${coordLatitude},${coordLongitude}`
+  debugger;
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+})
+
+  
+  }
+)
+
+}
+
+$('#submitAddress').click(turqouise)
