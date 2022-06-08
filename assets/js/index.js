@@ -13,6 +13,23 @@ var weatherApiRequest
 weatherApiRequest = `https://api.openweathermap.org/data/2.5/weather?lat=${coordLatitude}&lon=${coordLongitude}&appid=5e4e76067c9efbd530372ae03978df87`
 
 let map, infoWindow;
+let latPos
+let longPos
+var starCityText = $('#startCity').html()
+var startCityField = $('#startCity').val()
+$( document ).ready(function() {
+navigator.geolocation.getCurrentPosition(
+  (position) => {
+    const pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    };
+    latPos = pos.lat
+    longPos = pos.lng
+    startCityField = `${latPos},${longPos}`
+    $('#startCity').val(`${latPos},${longPos}`)
+  })
+})
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
