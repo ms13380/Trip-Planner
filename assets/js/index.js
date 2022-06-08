@@ -81,6 +81,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 window.initMap = initMap;
 
+
+
+
 function turqouise() {
   selectedCity = $('#cityInput').val();
   cityArray = selectedCity.split(' ');
