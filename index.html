@@ -29,7 +29,9 @@
 
   <div class="container">
     <h1 class="week">Your Trips</h1>
-    <div class="row justify-content-around align-items-center my-4"> 
+    
+    
+     <div class="row justify-content-around align-items-center my-4"> 
       <form id="from-input">
         <p>Coming From:</p>
         <input placeholder="Enter City" type="text">
@@ -38,7 +40,29 @@
         <p>Destination:</p>
         <input placeholder="Enter City" type="text">
       </form>
+    
+    
+    
+
+    
+    <div class="row justify-content-center align-items-center my-4"> 
+      <p style="margin-right: 20px;">Destination:</p>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"></span>
+        </div>
+        <input id="cityInput" type="text" placeholder="Enter City" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <button class="btn btn-primary m-2" id="submitAddress">submit</button>
     </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+    <!-- Script required to run map. Do not remove-->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer></script>
   </div>
 
   <div class="container">
@@ -131,7 +155,8 @@
           <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
         </div>
       </div>
-      <button type="button" class="btn btn-primary">Select</button>
+      
+           <button type="button" class="btn btn-primary">Select</button>
     </div>
 
     <div class="card">
@@ -146,6 +171,12 @@
           <p class="mb-0 me-4">Sunny</p>
           <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
         </div>
+
+
+         <div class="card">
+        <p class="card-header"><strong>Saturday</strong></p>
+        <div class="card-body">Sat Jun 11th</div>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
       <button type="button" class="btn btn-primary">Select</button>
     </div>
@@ -170,25 +201,28 @@
   <div class="row justify-content-center align-items-center my-4">
       <button type="button" class="btn btn-primary">Let's Go!</button>
   </div>
-  
 
   <div class="row justify-content-center align-items-center my-4">
+    <h3>Map your destination</h3>
+  </div>
+  <!--Map data goes here. Please do not move.-->
+  <div class="row justify-content-center align-items-center my-4 pb-5">
   <div class="mapouter ">
     <div class="gmap_canvas">
-      <iframe width="900" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-      <a href="#"></a>
+      <div id="map"></div>
       <br>
     </div>
   </div>
 </div>
 
-<script src="./assets/js/index.js"></script>
+
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3oMEhRXjU69EfrjDpF97lFWqcv8fZyw&callback=initMap&v=weekly"
       defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
-   
+    <script src="./assets/js/index.js"></script>
+
 </body>
 </html>
