@@ -29,9 +29,15 @@
 
   <div class="container">
     <h1 class="week">Your Trips</h1>
-    <div class="row justify-content-center align-items-center my-4"> 
-      <p style="margin-right: 20px;">Destination:</p>
-      <input placeholder="Enter City" type="text">
+    <div class="row justify-content-around align-items-center my-4"> 
+      <form id="from-input">
+        <p>Coming From:</p>
+        <input placeholder="Enter City" type="text">
+      </form>
+      <form id="too-input">
+        <p>Destination:</p>
+        <input placeholder="Enter City" type="text">
+    </form>
     </div>
   </div>
 
@@ -44,57 +50,127 @@
         <h3>Month</h3>
       <i class="fas fa-angle-right next"></i>
     </div>
-    <div class="row justify-content-center align-items-center my-4">
-      <i class="bi bi-arrow-left-circle-fill"></i>
+
+    <main class="row justify-content-center align-items-center my-4">
+
       <div class="card">
-        <p class="card-header"><strong>Monday</strong></p>
-        <div class="card-body">Mon Jun 6th</div>
+        <p id="1" class="card-header"><strong>Monday Jun 6th</strong></p>
+        <div class="card-body">
+          <h4 id="city-1" class="mb-1 sfw-normal">New York, US</h4>
+          <p id="temp-1" class="mb-2">Current temperature: <strong>5.42°C</strong></p>
+          <p>Feels like: <strong>4.37°C</strong></p>
+          <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+          <div class="d-flex flex-row align-items-center">
+            <p class="mb-0 me-4">Scattered Clouds</p>
+            <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
 
       <div class="card">
-        <p class="card-header"><strong>Tuesday</strong></p>
-        <div class="card-body">Tue Jun 7th</div>
+        <p id="2" class="card-header"><strong>Tuesday Jun 7th</strong></p>
+        <div class="card-body">
+          <h4 id="city-2" class="mb-1 sfw-normal">New York, US</h4>
+          <p id="temp-2" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+          <p>Feels like: <strong>4.37°C</strong></p>
+          <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+          <div class="d-flex flex-row align-items-center">
+            <p class="mb-0 me-4">Sunny</p>
+            <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
 
       <div class="card">
-        <p class="card-header"><strong>Wednesday</strong></p>
-        <div class="card-body">Wed Jun 8th</div>
+        <p id="3" class="card-header"><strong>Wednesday Jun 8th</strong></p>
+        <div class="card-body">
+          <h4 id="city-3" class="mb-1 sfw-normal">New York, US</h4>
+          <p id="city-3" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+          <p>Feels like: <strong>4.37°C</strong></p>
+          <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+          <div class="d-flex flex-row align-items-center">
+            <p class="mb-0 me-4">Scattered Clouds</p>
+            <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
 
       <div class="card">
-        <p class="card-header"><strong>Thursday</strong></p>
-        <div class="card-body">Thu Jun 9th</div>
+        <p id="4" class="card-header"><strong>Thursday Jun 9th</strong></p>
+        <div class="card-body">
+          <h4 id="city-4" class="mb-1 sfw-normal">New York, US</h4>
+          <p id="temp-4" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+          <p>Feels like: <strong>4.37°C</strong></p>
+          <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+          <div class="d-flex flex-row align-items-center">
+            <p class="mb-0 me-4">Partly Cloudy</p>
+            <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
 
       <div class="card">
-        <p class="card-header"><strong>Friday</strong></p>
-        <div class="card-body">Fri Jun 10th</div>
+        <p id="5" class="card-header"><strong>Friday Jun 10th</strong></p>
+        <div class="card-body">
+          <h4 id="city-5" class="mb-1 sfw-normal">New York, US</h4>
+          <p id="temp-5" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+          <p>Feels like: <strong>4.37°C</strong></p>
+          <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+          <div class="d-flex flex-row align-items-center">
+            <p class="mb-0 me-4">Sunny</p>
+            <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
 
       <div class="card">
-        <p class="card-header"><strong>Saturday</strong></p>
-        <div class="card-body">Sat Jun 11th</div>
+        <p id="6" class="card-header"><strong>Saturday Jun 11th</strong></p>
+        <div class="card-body">
+          <h4 id="city-6" class="mb-1 sfw-normal">New York, US</h4>
+          <p id="temp-6" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+          <p>Feels like: <strong>4.37°C</strong></p>
+          <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+          <div class="d-flex flex-row align-items-center">
+            <p class="mb-0 me-4">Sunny</p>
+            <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
 
       <div class="card">
-        <p class="card-header"><strong>Sunday</strong></p>
-        <div class="card-body">Sun Jun 12th</div>
+        <p id="7" class="card-header"><strong>Sunday Jun 12th</strong></p>
+        <div class="card-body">
+          <h4 id="city-7" class="mb-1 sfw-normal">New York, US</h4>
+          <p id="temp-7" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+          <p>Feels like: <strong>4.37°C</strong></p>
+          <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+          <div class="d-flex flex-row align-items-center">
+            <p class="mb-0 me-4">Sunny</p>
+            <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary">Select</button>
       </div>
-      <i class="bi bi-arrow-right-circle-fill"></i>
-    </div>
+      
+    </main>
+
     <div class="row justify-content-center align-items-center my-4">
       <button type="button" class="btn btn-primary">Let's Go!</button>
     </div>
   </div>
-    
-   
 
   <div class="row justify-content-center align-items-center my-4">
   <div class="mapouter ">
