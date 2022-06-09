@@ -37,24 +37,29 @@ submitBtn.click(getStartCity);
 function getStartCity() {
   startCityField = $('#startCity').val()
   destAddress = $('#destCity').val()
-  debugger;
   const directionsService = new google.maps.DirectionsService();
-  // const directionsRenderer = new google.maps.directionsRenderer({ map: map});
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom:7,
+    center: destAddress
+  }
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsRenderer.setMap(map);
   directionsService.route( {
     origin: startCityField,
     destination: destAddress,
     travelMode: 'DRIVING'
   }, (directionsResult, directionsStatus) => {
-    console.log(directionsResult)
-    console.log(directionsStatus)
+    if(directionsStatus == "OK") {directionsRenderer.setDirections(directionsResult)
   }
-  
-  )}
+  debugger;
+  })}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -34.397, lng: 150.644 },
-    zoom: 6,
+    zoom:10,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   infoWindow = new google.maps.InfoWindow();
 
