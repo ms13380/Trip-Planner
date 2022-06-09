@@ -6,7 +6,7 @@
 let latCoord
 let longCoord
 var destAddress = $('#destCity').val()
-var submitBtn = $('#submitAddress')
+var submitBtn = $('#submitBtn')
 var directionsService
 var coordLongitude
 var coordLatitude
@@ -33,15 +33,16 @@ navigator.geolocation.getCurrentPosition(
   })
 })
 
-submitBtn.click(getStartCity);
+submitBtn.click(getStartCity)
 function getStartCity() {
+
   startCityField = $('#startCity').val()
   destAddress = $('#destCity').val()
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
   var mapOptions = {
     zoom:7,
-    center: destAddress
+    center: { lat: -34.397, lng: 150.644 }
   }
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsRenderer.setMap(map);
@@ -56,12 +57,25 @@ function getStartCity() {
   var directionsDiv = $('#directions')
   var legsArray = routesArray[0].steps
   var stepsArray = directionsResult.routes[0].legs[0].steps
+  var totalDist = directionsResult.routes[0].legs[0].distance.text
+  var totalDuration = directionsResult.routes[0].legs[0].duration.text
   var instrArray = stepsArray[0]
+  debugger;
   console.log(instrArray)
-  for(var i = 0; i < instrArray.length - 1; i++) {
-    console.log(instrArray[i].instructions)
-
+  for(var i = 0; i < stepsArray.length - 1; i++) {
+    var ptag = $('#directions').append("<p>")
+    var distanceTraveled = stepsArray[i].distance.text
+    var eachDirection = stepsArray[i].instructions
+    $('#directions').append(`<p>
+    ${eachDirection} for ${distanceTraveled}
+      </p>`
+    )
   }
+  const distanceButton = document.createElement("button");
+  distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
+  distanceButton.classList.add("btn")
+  distanceButton.classList.add("btn-primary")
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(distanceButton);
   })}
 
 function initMap() {
