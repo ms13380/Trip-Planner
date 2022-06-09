@@ -37,24 +37,38 @@ submitBtn.click(getStartCity);
 function getStartCity() {
   startCityField = $('#startCity').val()
   destAddress = $('#destCity').val()
-  debugger;
   const directionsService = new google.maps.DirectionsService();
-  // const directionsRenderer = new google.maps.directionsRenderer({ map: map});
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom:7,
+    center: destAddress
+  }
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsRenderer.setMap(map);
   directionsService.route( {
     origin: startCityField,
     destination: destAddress,
     travelMode: 'DRIVING'
   }, (directionsResult, directionsStatus) => {
-    console.log(directionsResult)
-    console.log(directionsStatus)
+    if(directionsStatus == "OK") {directionsRenderer.setDirections(directionsResult)
   }
-  
-  )}
+  var routesArray = directionsResult.routes[0].legs
+  var directionsDiv = $('#directions')
+  var legsArray = routesArray[0].steps
+  var stepsArray = directionsResult.routes[0].legs[0].steps
+  var instrArray = stepsArray[0]
+  console.log(instrArray)
+  for(var i = 0; i < instrArray.length - 1; i++) {
+    console.log(instrArray[i].instructions)
+
+  }
+  })}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -34.397, lng: 150.644 },
-    zoom: 6,
+    zoom:10,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   infoWindow = new google.maps.InfoWindow();
 
