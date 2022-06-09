@@ -21,20 +21,16 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <!-- Link CSS File-->
     <link href="assets/css/style.css" rel="stylesheet">
     
 </head>
 <body>
 
-     <header class="jumbotron;color:#87CEEB">
-        <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Your Trip</h1>
-        <h2 style="text-align:center;font-family:'Roboto';color:#000000;">A simple app for getting All necessary info before you Travel!</h2>
-        <p id="currentDay" class="lead"></p>
-      </header>
-
   <div class="container">
+    <h1 class="week">Your Trips</h1>
+    
+    
      <div class="row justify-content-around align-items-center my-4"> 
       <div class="col-sm-4"><form id="from-input">
         <p>Coming From:</p>
@@ -47,67 +43,30 @@
       </form>
     </div>
     <div class="col-sm-4">
-        <head>
-            <style>
-            .button {
-              display: inline-block;
-              border-radius: 4px;
-              background-color: #00b140;
-              border: none;
-              color: #FFFFFF;
-              text-align: center;
-              font-size: 28px;
-              padding: 20px;
-              width: 200px;
-              transition: all 0.5s;
-              cursor: pointer;
-              margin: 5px;
-            }
-            
-            .button span {
-              cursor: pointer;
-              display: inline-block;
-              position: relative;
-              transition: 0.5s;
-            }
-            
-            .button span:after {
-              content: '\00bb';
-              position: absolute;
-              opacity: 0;
-              top: 0;
-              right: -20px;
-              transition: 0.5s;
-            }
-            
-            .button:hover span {
-              padding-right: 25px;
-            }
-            
-            .button:hover span:after {
-              opacity: 1;
-              right: 0;
-            }
-            </style>
-            </head>
-            <body>
-            <button class="button" style="vertical-align:middle; font-family: 'Roboto'"><span>Let's Go! </span></button>
-            </body>
+      <button class="btn btn-primary ml-0" id="submitAddress">submit</button>
       </div>
     </div>
     
+
+  
+  
+
+
   <div class="container">
     <div class="row justify-content-center align-items-center">
-        <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Today</h1>
+      <h1>Travel Dates</h1>
     </div>
     <div class="row justify-content-center align-items-center">
+      <i class="fas fa-angle-left prev"></i>
+        <h3>Month</h3>
+      <i class="fas fa-angle-right next"></i>
     </div>
   </div>
 
   <main class="row justify-content-center align-items-center my-4">
 
     <div class="card">
-      <p id="1" class="card-header"><strong></strong></p>
+      <p id="1" class="card-header"><strong>Monday Jun 6th</strong></p>
       <div class="card-body">
         <h4 id="city-1" class="mb-1 sfw-normal">New York, US</h4>
         <p id="temp-1" class="mb-2">Current temperature: <strong>5.42°C</strong></p>
@@ -119,10 +78,11 @@
           <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
         </div>
       </div>
+      <button type="button" class="btn btn-primary">Select</button>
     </div>
 
     <div class="card">
-      <p id="2" class="card-header"><strong></strong></p>
+      <p id="2" class="card-header"><strong>Tuesday Jun 7th</strong></p>
       <div class="card-body">
         <h4 id="city-2" class="mb-1 sfw-normal">New York, US</h4>
         <p id="temp-2" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
@@ -134,10 +94,11 @@
           <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
         </div>
       </div>
+      <button type="button" class="btn btn-primary">Select</button>
     </div>
 
     <div class="card">
-      <p id="3" class="card-header"><strong></strong></p>
+      <p id="3" class="card-header"><strong>Wednesday Jun 8th</strong></p>
       <div class="card-body">
         <h4 id="city-3" class="mb-1 sfw-normal">New York, US</h4>
         <p id="city-3" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
@@ -149,10 +110,11 @@
           <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
         </div>
       </div>
+      <button type="button" class="btn btn-primary">Select</button>
     </div>
 
     <div class="card">
-      <p id="4" class="card-header"><strong></strong></p>
+      <p id="4" class="card-header"><strong>Thursday Jun 9th</strong></p>
       <div class="card-body">
         <h4 id="city-4" class="mb-1 sfw-normal">New York, US</h4>
         <p id="temp-4" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
@@ -164,10 +126,11 @@
           <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
         </div>
       </div>
+      <button type="button" class="btn btn-primary">Select</button>
     </div>
 
     <div class="card">
-      <p id="5" class="card-header"><strong></strong></p>
+      <p id="5" class="card-header"><strong>Friday Jun 10th</strong></p>
       <div class="card-body">
         <h4 id="city-5" class="mb-1 sfw-normal">New York, US</h4>
         <p id="temp-5" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
@@ -180,9 +143,55 @@
         </div>
       </div>
       
+           <button type="button" class="btn btn-primary">Select</button>
     </div>
+
+    <div class="card">
+      <p id="6" class="card-header"><strong>Saturday Jun 11th</strong></p>
+      <div class="card-body">
+        <h4 id="city-6" class="mb-1 sfw-normal">New York, US</h4>
+        <p id="temp-6" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+        <p>Feels like: <strong>4.37°C</strong></p>
+        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+        <div class="d-flex flex-row align-items-center">
+          <p class="mb-0 me-4">Sunny</p>
+          <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+        </div>
+
+
+         <div class="card">
+        <p class="card-header"><strong>Saturday</strong></p>
+        <div class="card-body">Sat Jun 11th</div>
+        <button type="button" class="btn btn-primary">Select</button>
+      </div>git 
+      <button type="button" class="btn btn-primary">Select</button>
+    </div>
+
+    <div class="card">
+      <p id="7" class="card-header"><strong>Sunday Jun 12th</strong></p>
+      <div class="card-body">
+        <h4 id="city-7" class="mb-1 sfw-normal">New York, US</h4>
+        <p id="temp-7" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
+        <p>Feels like: <strong>4.37°C</strong></p>
+        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+
+        <div class="d-flex flex-row align-items-center">
+          <p class="mb-0 me-4">Sunny</p>
+          <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary">Select</button>
+    </div> 
   </main>
 
+  <div class="row justify-content-center align-items-center my-4">
+      <button type="button" class="btn btn-primary">Let's Go!</button>
+  </div>
+
+  <div class="row justify-content-center align-items-center my-4">
+    <h3>Map your destination</h3>
+  </div>
   <!--Map data goes here. Please do not move.-->
   <div id="directions"></div>
   <div class="row justify-content-center align-items-center my-4 pb-5">
@@ -193,7 +202,7 @@
     </div>
   </div>
 </div>
-  </div>
+
 
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3oMEhRXjU69EfrjDpF97lFWqcv8fZyw&callback=initMap&v=weekly"
@@ -202,6 +211,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/index.js"></script>
-    <script src=“./assets/js/Weather.js”></script>
+    <script src="assets/script.js"></script>
+
 </body>
 </html>
