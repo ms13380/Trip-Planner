@@ -19,19 +19,9 @@ let longPos
 var starCityText = $('#startCity').html()
 var startCityField = $('#startCity').val()
 $( document ).ready(function() {
-navigator.geolocation.getCurrentPosition(
-  (position) => {
-    const pos = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    };
-    latPos = pos.lat
-    longPos = pos.lng
-    startCityField = `${latPos},${longPos}`
-// set starting city to the current position by default. 
-    $('#startCity').val(`${latPos},${longPos}`)
+
+    $('#startCity').val(`New York,NY`)
   })
-})
 
 submitBtn.click(getStartCity)
 function getStartCity() {
