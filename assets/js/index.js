@@ -52,7 +52,16 @@ function getStartCity() {
   }, (directionsResult, directionsStatus) => {
     if(directionsStatus == "OK") {directionsRenderer.setDirections(directionsResult)
   }
-  debugger;
+  var routesArray = directionsResult.routes[0].legs
+  var directionsDiv = $('#directions')
+  var legsArray = routesArray[0].steps
+  var stepsArray = directionsResult.routes[0].legs[0].steps
+  var instrArray = stepsArray[0]
+  console.log(instrArray)
+  for(var i = 0; i < instrArray.length - 1; i++) {
+    console.log(instrArray[i].instructions)
+
+  }
   })}
 
 function initMap() {
