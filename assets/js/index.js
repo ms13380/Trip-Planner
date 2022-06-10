@@ -18,10 +18,7 @@ let latPos
 let longPos
 var starCityText = $('#startCity').html()
 var startCityField = $('#startCity').val()
-$( document ).ready(function() {
 
-    $('#startCity').val(`New York,NY`)
-  })
 
 submitBtn.click(getStartCity)
 function getStartCity() {
