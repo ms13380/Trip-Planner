@@ -67,4 +67,13 @@ body {
     opacity: 1;
     right: 0;
 }
-  
+
+.card:hover {
+    background-color: #ccccf9;
+
+}
+
+.directions-bkgrd {
+    background-color: #DADDDB;
+    
+}
