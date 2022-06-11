@@ -42,7 +42,8 @@ localStorage.setItem("TripKey", tripdata)
     //stringify object
     window.localStorage.setItem('tripdata',JSON.stringify(tripdata))
 }
-
+// when button in upper left corner is clicked, run retrieves trip data
+$('#retrieve-data').click(retrievetripdata)
 //pull from localStorage
 function retrievetripdata(){
     var retrievekey = document.getElementById('retrievekey').value;
