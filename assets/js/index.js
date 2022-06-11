@@ -57,6 +57,10 @@ function getStartCity() {
     ${eachDirection} for ${distanceTraveled}
       </p>`
     )
+    $('#directions').addClass('bg-light')
+    $('#directions').addClass('justify-content-center')
+    $('#directions').addClass('align-items-center')
+    $('#directions').addClass('row')
   }
   const distanceButton = document.createElement("button");
   distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
