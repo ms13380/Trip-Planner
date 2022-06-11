@@ -27,7 +27,7 @@ function store() {
     var StartAddress = document.getElementById('from-input').value;
     var EndAddress = document.getElementById('too-input').value;
     var CityName = document.getElementById('destCity').value;
-    var Date = document.getElementById('Date-Picker').value;
+    var Date = document.getElementById('date-picker').value;
     
 var tripdata = []
 
@@ -42,8 +42,7 @@ localStorage.setItem("TripKey", tripdata)
     //stringify object
     window.localStorage.setItem('tripdata',JSON.stringify(tripdata))
 }
-// when button in upper left corner is clicked, run retrieves trip data
-$('#retrieve-data').click(retrievetripdata)
+
 //pull from localStorage
 function retrievetripdata(){
     var retrievekey = document.getElementById('retrievekey').value;
