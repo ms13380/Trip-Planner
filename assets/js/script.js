@@ -8,19 +8,31 @@ var fifthDay = $("#5")
 
 var today = moment()
 
-currentDay.text(today.format("dddd, MMMM Do, YYYY"))
+//Store address to localStorage
+var tripdata = []
+localStorage.setItem("TripKey", tripdata)
+    const trip = {
+        StartAddress: "",
+        EndAddress: "",
+        CityName: "",
+        Date: ""
+    }
+    window.localStorage.setItem('tripdata',JSON.stringify(tripdata))
+var tripdata = localStorage.getItem("TripKey")
+
+currentDay.text(today.format("ddd MMMM Do"))
 console.log(currentDay);
 
-secondDay.text(today.add(1, 'days').format("dddd, MMMM Do, YYYY"));
+secondDay.text(today.add(1, 'days').format("ddd MMMM Do"));
 console.log(secondDay)
 
-thirdDay.text(today.add(1, 'days').format("dddd, MMMM Do, YYYY"));
+thirdDay.text(today.add(1, 'days').format("ddd MMMM Do"));
 console.log(thirdDay)
 
-forthDay.text(today.add(1, 'days').format("dddd, MMMM Do, YYYY"));
+forthDay.text(today.add(1, 'days').format("ddd MMMM Do"));
 console.log(forthDay)
 
-fifthDay.text(today.add(1, 'days').format("dddd, MMMM Do, YYYY"));
+fifthDay.text(today.add(1, 'days').format("ddd MMMM Do"));
 console.log(fifthDay)
 
 

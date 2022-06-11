@@ -28,164 +28,126 @@
 </head>
 <body>
 
-     <header class="jumbotron;color:#87CEEB">
-        <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Your Trip</h1>
-        <h2 style="text-align:center;font-family:'Roboto';color:#000000;">A simple app for getting All necessary info before you Travel!</h2>
-        <p id="currentDay" class="lead"></p>
-      </header>
-
-  <div class="container">
+  <header class="jumbotron; color:;">
 
     <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Your Trip</h1>
-     <div class="row justify-content-around align-items-center my-4"> 
-      <div class="col-sm-4"><form id="from-input">
-        <p>Coming From:</p>
-        <input id="startCity" placeholder="Enter City" type="text">
-      </form></div>
-      <div class="col-sm-4 p-0">
-      <form id="too-input">
-        <p>Destination:</p>
-        <input id="destCity" placeholder="San Diego,CA" type="text">
+    <h2 style="text-align:center;font-family:'Roboto';color:#000000;">A simple app for getting All necessary info before you Travel!</h2>
+  </header>
+
+  <div class="container">
+    <div class="d-flex flex-row justify-content-around my-4"> 
+      
+      <form class="" id="from-input">
+        <h3 class="text-center">Coming From:</h3>
+        <input id="startCity" placeholder="Enter City" type="text" class="form-control-lg">
       </form>
+      
+      <form class="" id="too-input">
+        <h3 class="text-center">Destination:</h3>
+        <input id="destCity" placeholder="San Diego, CA" type="text" class="form-control-lg">
+      </form>
+      
     </div>
-    <div class="col-sm-4">
-        <head>
-            <style>
-            .button {
-              display: inline-block;
-              border-radius: 4px;
-              background-color: #00b140;
-              border: none;
-              color: #FFFFFF;
-              text-align: center;
-              font-size: 28px;
-              padding: 20px;
-              width: 200px;
-              transition: all 0.5s;
-              cursor: pointer;
-              margin: 5px;
-            }
-            
-            .button span {
-              cursor: pointer;
-              display: inline-block;
-              position: relative;
-              transition: 0.5s;
-            }
-            
-            .button span:after {
-              content: '\00bb';
-              position: absolute;
-              opacity: 0;
-              top: 0;
-              right: -20px;
-              transition: 0.5s;
-            }
-            
-            .button:hover span {
-              padding-right: 25px;
-            }
-            
-            .button:hover span:after {
-              opacity: 1;
-              right: 0;
-            }
-            </style>
-            </head>
-            <body>
-            <button class="button" style="vertical-align:middle; font-family: 'Roboto'"><span>Let's Go! </span></button>
-            </body>
-      </div>
+  </div>  
+
+  <div class="d-flex flex-row justify-content-center my-4">
+    <div class="justify-content-center">
+      <button id="submitBtn" class="button" style="vertical-align:middle; font-family: 'Roboto'"><span>Let's Go! </span></button>
     </div>
-    
+  </div>
+   
   <div class="container">
     <div class="row justify-content-center align-items-center">
-        <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Today</h1>
-    </div>
-    <div class="row justify-content-center align-items-center">
+      <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Weather Forecast</h1>
     </div>
   </div>
 
-  <main class="row justify-content-center align-items-center my-4">
+  <main class="container fluid">
+    <div class="row justify-content-center align-items-center my-3">
+      <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card my-3">
+          <p id="1" class="card-header"><strong></strong></p>
+          <div class="card-body">
+            <h4 id="city-1" class="mb-1 sfw-normal">New York, US</h4>
+            <p id="temp-1" class="mb-2">s
 
-    <div class="card">
-      <p id="1" class="card-header"><strong></strong></p>
-      <div class="card-body">
-        <h4 id="city-1" class="mb-1 sfw-normal">New York, US</h4>
-        <p id="temp-1" class="mb-2">Current temperature: <strong>5.42°C</strong></p>
-        <p>Feels like: <strong>4.37°C</strong></p>
-        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
+            <div class="d-flex flex-row align-items-center">
+              <p class="mb-0 me-4">Scattered Clouds</p>
+              <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card my-3">
+          <p id="2" class="card-header"><strong></strong></p>
+          <div class="card-body">
+            <h4 id="city-2" class="mb-1 sfw-normal">New York, US</h4>
+            <p id="temp-2" class="mb-2">
 
-        <div class="d-flex flex-row align-items-center">
-          <p class="mb-0 me-4">Scattered Clouds</p>
-          <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
+            <div class="d-flex flex-row align-items-center">
+              <p class="mb-0 me-4">Sunny</p>
+              <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card my-3">
+          <p id="3" class="card-header"><strong></strong></p>
+          <div class="card-body">
+            <h4 id="city-3" class="mb-1 sfw-normal">New York, US</h4>
+            <p id="temp-3" class="mb-2">
+
+            <div class="d-flex flex-row align-items-center">
+              <p class="mb-0 me-4">Scattered Clouds</p>
+              <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card my-3">
+          <p id="4" class="card-header"><strong></strong></p>
+          <div class="card-body">
+            <h4 id="city-4" class="mb-1 sfw-normal">New York, US</h4>
+            <p id="temp-4" class="mb-2">
+
+            <div class="d-flex flex-row align-items-center">
+              <p class="mb-0 me-4">Partly Cloudy</p>
+              <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card my-3">
+          <p id="5" class="card-header"><strong></strong></p>
+          <div class="card-body">
+            <h4 id="city-5" class="mb-1 sfw-normal">New York, US</h4>
+            <p id="temp-5" class="mb-2">
+
+            <div class="d-flex flex-row align-items-center">
+              <p class="mb-0 me-4">Sunny</p>
+              <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <p id="2" class="card-header"><strong></strong></p>
-      <div class="card-body">
-        <h4 id="city-2" class="mb-1 sfw-normal">New York, US</h4>
-        <p id="temp-2" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
-        <p>Feels like: <strong>4.37°C</strong></p>
-        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
-
-        <div class="d-flex flex-row align-items-center">
-          <p class="mb-0 me-4">Sunny</p>
-          <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <p id="3" class="card-header"><strong></strong></p>
-      <div class="card-body">
-        <h4 id="city-3" class="mb-1 sfw-normal">New York, US</h4>
-        <p id="city-3" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
-        <p>Feels like: <strong>4.37°C</strong></p>
-        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
-
-        <div class="d-flex flex-row align-items-center">
-          <p class="mb-0 me-4">Scattered Clouds</p>
-          <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <p id="4" class="card-header"><strong></strong></p>
-      <div class="card-body">
-        <h4 id="city-4" class="mb-1 sfw-normal">New York, US</h4>
-        <p id="temp-4" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
-        <p>Feels like: <strong>4.37°C</strong></p>
-        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
-
-        <div class="d-flex flex-row align-items-center">
-          <p class="mb-0 me-4">Partly Cloudy</p>
-          <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <p id="5" class="card-header"><strong></strong></p>
-      <div class="card-body">
-        <h4 id="city-5" class="mb-1 sfw-normal">New York, US</h4>
-        <p id="temp-5" class="mb-2">Estimated temperature: <strong>5.42°C</strong></p>
-        <p>Feels like: <strong>4.37°C</strong></p>
-        <p>Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong></p>
-
-        <div class="d-flex flex-row align-items-center">
-          <p class="mb-0 me-4">Sunny</p>
-          <i class="fas fa-sun fa-3x" style="color: rgb(219, 206, 19);"></i>
-        </div>
-      </div>
-      
-    </div>
+    <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 d-flex justify-content-center"><h3>Directions</h3></div>
+    <div class="col-sm-3"></div>
+  </div>
   </main>
 
   <!--Map data goes here. Please do not move.-->
+  <div id="directions"></div>
   <div class="row justify-content-center align-items-center my-4 pb-5">
   <div class="mapouter ">
     <div class="gmap_canvas">
@@ -203,6 +165,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/index.js"></script>
-    <script src=“./assets/js/Weather.js”></script>
+    <script src="./assets/js/Weather.js"></script>
 </body>
 </html>

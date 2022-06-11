@@ -6,7 +6,7 @@
 let latCoord
 let longCoord
 var destAddress = $('#destCity').val()
-var submitBtn = $('#submitAddress')
+var submitBtn = $('#submitBtn')
 var directionsService
 var coordLongitude
 var coordLatitude
@@ -18,43 +18,58 @@ let latPos
 let longPos
 var starCityText = $('#startCity').html()
 var startCityField = $('#startCity').val()
-$( document ).ready(function() {
-navigator.geolocation.getCurrentPosition(
-  (position) => {
-    const pos = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    };
-    latPos = pos.lat
-    longPos = pos.lng
-    startCityField = `${latPos},${longPos}`
-// set starting city to the current position by default. 
-    $('#startCity').val(`${latPos},${longPos}`)
-  })
-})
 
-submitBtn.click(getStartCity);
+
+submitBtn.click(getStartCity)
 function getStartCity() {
+
   startCityField = $('#startCity').val()
   destAddress = $('#destCity').val()
-  debugger;
   const directionsService = new google.maps.DirectionsService();
-  // const directionsRenderer = new google.maps.directionsRenderer({ map: map});
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom:7,
+    center: { lat: -34.397, lng: 150.644 }
+  }
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsRenderer.setMap(map);
   directionsService.route( {
     origin: startCityField,
     destination: destAddress,
     travelMode: 'DRIVING'
   }, (directionsResult, directionsStatus) => {
-    console.log(directionsResult)
-    console.log(directionsStatus)
+    if(directionsStatus == "OK") {directionsRenderer.setDirections(directionsResult)
   }
-  
-  )}
+  var routesArray = directionsResult.routes[0].legs
+  var directionsDiv = $('#directions')
+  var legsArray = routesArray[0].steps
+  var stepsArray = directionsResult.routes[0].legs[0].steps
+  var totalDist = directionsResult.routes[0].legs[0].distance.text
+  var totalDuration = directionsResult.routes[0].legs[0].duration.text
+  var instrArray = stepsArray[0]
+  debugger;
+  console.log(instrArray)
+  for(var i = 0; i < stepsArray.length - 1; i++) {
+    var ptag = $('#directions').append("<p>")
+    var distanceTraveled = stepsArray[i].distance.text
+    var eachDirection = stepsArray[i].instructions
+    $('#directions').append(`<p>
+    ${eachDirection} for ${distanceTraveled}
+      </p>`
+    )
+  }
+  const distanceButton = document.createElement("button");
+  distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
+  distanceButton.classList.add("btn")
+  distanceButton.classList.add("btn-primary")
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(distanceButton);
+  })}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -34.397, lng: 150.644 },
-    zoom: 6,
+    zoom:10,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   infoWindow = new google.maps.InfoWindow();
 
