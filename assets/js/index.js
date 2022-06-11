@@ -58,9 +58,9 @@ function getStartCity() {
       </p>`
     )
     $('#directions').addClass('bg-light')
-    $('#directions').addClass('justify-content-center')
-    $('#directions').addClass('align-items-center')
-    $('#directions').addClass('row')
+    $('html, body').animate({
+      scrollTop: $("#directions").offset().top
+  });
   }
   const distanceButton = document.createElement("button");
   distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
