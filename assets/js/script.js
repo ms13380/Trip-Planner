@@ -27,7 +27,7 @@ function store() {
     var StartAddress = document.getElementById('from-input').value;
     var EndAddress = document.getElementById('too-input').value;
     var CityName = document.getElementById('destCity').value;
-    var Date = document.getElementById('Date-Picker').value;
+    var Date = document.getElementById('date-picker').value;
     
 var tripdata = []
 
