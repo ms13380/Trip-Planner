@@ -8,6 +8,18 @@ var fifthDay = $("#5")
 
 var today = moment()
 
+//Store address to localStorage
+var tripdata = []
+localStorage.setItem("TripKey", tripdata)
+    const trip = {
+        StartAddress: "",
+        EndAddress: "",
+        CityName: "",
+        Date: ""
+    }
+    window.localStorage.setItem('tripdata',JSON.stringify(tripdata))
+var tripdata = localStorage.getItem("TripKey")
+
 currentDay.text(today.format("ddd MMMM Do"))
 console.log(currentDay);
 
