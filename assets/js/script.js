@@ -24,10 +24,10 @@ console.log(fifthDay)
 
 //Stores items in localStorage
 function store() {
-    var StartAddress = document.getElementById('Start').value;
-    var EndAddress = document.getElementById('End').value;
-    var CityName = document.getElementById('City').value;
-    var Date = document.getElementById('Date').value;
+    var StartAddress = document.getElementById('from-input').value;
+    var EndAddress = document.getElementById('too-input').value;
+    var CityName = document.getElementById('destCity').value;
+    var Date = document.getElementById('Date-Picker').value;
     
 var tripdata = []
 
@@ -52,7 +52,6 @@ function retrievetripdata(){
 //Loads page before functions execute
 window.onload = function(){
     document.getElementById("submitBtn").onsubmit = store
-    document.getElementById("NEED BUTTON NAME").onclick = retrievetripdata
 }
 
 
