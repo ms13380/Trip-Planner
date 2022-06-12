@@ -1,9 +1,9 @@
 var APIKey = "85b081d82a8b2923ac904659cddb3896";
 var city = "London, uk";
-var ActualW = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-var ForecastW = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
-var cordW = "https://api.openweathermap.org/data/2.5/forecast/daily?lat=57&lon=-2.15&appid=85b081d82a8b2923ac904659cddb3896"
-var cordW = "https://api.openweathermap.org/data/2.5/forecast/daily?&appid=85b081d82a8b2923ac904659cddb3896"
+var ActualW = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=85b081d82a8b2923ac904659cddb3896";
+//var ForecastW = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
+//var cordW = "https://api.openweathermap.org/data/2.5/forecast/daily?lat=57&lon=-2.15&appid=85b081d82a8b2923ac904659cddb3896"
+//var cordW = "https://api.openweathermap.org/data/2.5/forecast/daily?&appid=85b081d82a8b2923ac904659cddb3896"
 var letsgoBtn = $('#letsgo')
 
 letsgoBtn.click(getStartweather);
@@ -32,7 +32,9 @@ $( document ).ready(function() {
     card5City.text('London')
     console.log(card1City.text())
 $.ajax({
-    url: ActualW
+    url: ActualW,
+    method: "GET",
+    dataType: "json"
 }).then(function(data) {
         ctemp0.innerHTML= `Current Temp: <strong>${data['main'].temp}°C</strong></p>
         <p>Feels like: <strong>${data['main'].feels_like}°C</strong></p>
@@ -71,19 +73,12 @@ function getStartweather() {
     console.log(destweather)
     var ForecastW = "http://api.openweathermap.org/data/2.5/forecast?q=" + destweather + "&appid=" + APIKey;
     $.ajax({
-        url: ForecastW
+        url: ForecastW,
+        method: "GET",
+        dataType: "json"
     }).then(function(data) {
        console.log(data);
-
-       
-
         // push the weather values for cards
-
-
-
-
-
-
 
     });
 }
