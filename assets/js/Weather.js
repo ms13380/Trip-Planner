@@ -39,6 +39,12 @@ function Updateweather(data) {
             var card3City = $('#city-3')
             var card4City = $('#city-4')
             var card5City = $('#city-5')
+
+            var looks1City = $('#looks1')
+            var looks2City = $('#looks2')
+            var looks3City = $('#looks3')
+            var looks4City = $('#looks4')
+            var looks5City = $('#looks5')
             
             var ctemp0 = document.querySelector("#temp-1");
             var ctemp1 = document.querySelector("#temp-2");
@@ -51,7 +57,14 @@ function Updateweather(data) {
             card3City.text(citytitle)
             card4City.text(citytitle)
             card5City.text(citytitle)
-            console.log(card1City.text())
+
+
+            looks1City.text(day1['weather'][0]['main'])
+            looks2City.text(day2['weather'][0]['main'])
+            looks3City.text(day3['weather'][0]['main'])
+            looks4City.text(day4['weather'][0]['main'])
+            looks5City.text(day5['weather'][0]['main'])
+            console.log(day1['weather'][0]['main'])
 
             ctemp0.innerHTML= `Current Temp: <strong>${day1['main'].temp}°C</strong></p>
             <p>Feels like: <strong>${day1['main'].feels_like}°F</strong></p>
