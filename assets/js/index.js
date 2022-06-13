@@ -18,6 +18,17 @@ let latPos
 let longPos
 var starCityText = $('#startCity').html()
 var startCityField = $('#startCity').val()
+showHideBtn()
+function showHideBtn() {
+  destAddress = $('#destCity').val()
+  startCityField = $('#startCity').val()
+  if(destAddress == "" || startCityField == "") {
+  submitBtn.addClass("d-none")
+} else if(destAddress.length > 0 && startCityField.length > 0 ) {
+  submitBtn.removeClass("d-none")
+  
+ }}
+setInterval(showHideBtn,1000)
 
 
 submitBtn.click(getStartCity)
