@@ -28,41 +28,45 @@
 </head>
 <body>
 
-  <header class="jumbotron">
+  <header class="jumbotron; color:;">
+    <div><button id="retrieve-data">Recent Searches</button></div>
 
     <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Your Trip</h1>
     <h2 style="text-align:center;font-family:'Roboto';color:#000000;">A simple app for getting All necessary info before you Travel!</h2>
   </header>
-
+<!-- enter note for users: Please use a US city,state.-->
   <div class="container">
-    <div class="row justify-content-center align-items-center my-4"> 
-      <div class="col-md-6">
-        <form id="from-input">
-          <h3>Coming From:</h3>
-          <input id="startCity" placeholder="Enter City" type="text" class="form-control-lg">
-        </form>
-      </div>
-      <div class="col-md-6">
-      <form id="too-input">
-        <h3>Destination:</h3>
+    <div class="d-flex flex-row justify-content-around my-4"> 
+      
+      <form class="" id="from-input">
+        <h3 class="text-center">Coming From:</h3>
+        <input id="startCity" placeholder="Enter City" type="text" class="form-control-lg">
+      </form>
+      
+      <form class="" id="too-input">
+        <h3 class="text-center">Destination:</h3>
         <input id="destCity" placeholder="San Diego, CA" type="text" class="form-control-lg">
       </form>
+      
     </div>
-    <div class="row my-4">
-      <div class="col-md-4 my-3">
-        <button class="button" style="vertical-align:middle; font-family: 'Roboto'"><span>Let's Go! </span></button>
-      </div>
+  </div> 
+
+  <div class="d-flex flex-row justify-content-center my-4">
+    <div class="justify-content-center">
+      <button id="submitBtn" class="button" style="vertical-align:middle; font-family: 'Roboto'"><span>Let's Go! </span></button>
     </div>
-  </div>  
-  
-    
-  
-    
+  </div>
+   
   <div class="container">
     <div class="row justify-content-center align-items-center">
-        <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Today</h1>
+      <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Weather Forecast</h1>
     </div>
-    <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Weather Forecast</h1>
+    <div class="row justify-content-center align-items-center">
+      <p> choose a date for your trip</p>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <input class="row justify-content-center align-items-center" type="date" id="date-picker"></input>
+    </div> 
   </div>
 
   <main class="container fluid">
@@ -142,10 +146,23 @@
         </div>
       </div>
     </div>
+ 
+    <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 d-flex justify-content-center"><h3>Directions</h3></div>
+    <div class="col-sm-3"></div>
+  </div>
+
   </main>
 
   <!--Map data goes here. Please do not move.-->
-  <div id="directions"></div>
+  <div class="container fluid">
+    <div class="row justify-content-center align-items-center my-3">
+      <div class="col-xl-9 col-lg-6 col-md-4 col-sm-4 col-xs-4">
+  <div id="directions" class="p-4"></div>
+  </div>
+</div>
+</div>
   <div class="row justify-content-center align-items-center my-4 pb-5">
   <div class="mapouter ">
     <div class="gmap_canvas">

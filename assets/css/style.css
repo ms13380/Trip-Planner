@@ -30,7 +30,7 @@ body {
 
 .button {
     display: inline-block;
-    border-radius: 4px;
+    border-radius: 10px;
     background-color: #00b140;
     border: none;
     color: #FFFFFF;
@@ -67,4 +67,13 @@ body {
     opacity: 1;
     right: 0;
 }
-  
+
+.card:hover {
+    background-color: #ccccf9;
+
+}
+
+.directions-bkgrd {
+    background-color: #DADDDB;
+    
+}
