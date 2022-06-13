@@ -6,6 +6,13 @@ submitBtn.click(getStartweather);
 
 // Default Location will match geo Location for maps 
 $( document ).ready(function() {
+    // adding local storage read last city
+    var tabledata = localStorage.getItem("TripKey");
+    if (tabledata !== null){
+        const TripKey = JSON.parse(tabledata);
+        console.log(TripKey)
+    }
+
 $.ajax({
     url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey+"&units=imperial",
     method: "GET",

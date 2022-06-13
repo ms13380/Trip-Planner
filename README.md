@@ -37,7 +37,7 @@ git clone https://github.com/ms13380/Trip-Planner
 
 ## Screenshoots
 
-![My animated logo](./Assets/readme-pics/overviewv1.2.png)
+![My animated logo](./Assets/readme-pics/overview.png)
 
 ## Conclusion 
 
