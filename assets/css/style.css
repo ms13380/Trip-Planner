@@ -91,3 +91,10 @@ label {
 label {
     font-size: 20px;
 }
+
+.un-pack {
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 60px;
+}
