@@ -5,6 +5,8 @@
 
 let latCoord
 let longCoord
+let start
+let end
 var destAddress = $('#destCity').val()
 var submitBtn = $('#submitBtn')
 var directionsService
@@ -81,7 +83,9 @@ for (let i = 1; i <= 10; i++) {
   //   localStorage.setItem("RecentDestCity5",destAddress)
   // } else {}
 $('#localStorageAlert').html(`<p>&#x1f44d; successfully saved to storage.</p>`)
+
 clearlocalStorageAlert()
+setTimeout(clearlocalStorageAlert,4000)
 }
 function clearlocalStorageAlert() {
   $('#localStorageAlert').html("")
@@ -101,22 +105,45 @@ for (let i = 0; i < localStorage.length; i+=2) {
   if(`RecentStartCity${y}` in localStorage) {
     debugger;
     var recentSearchBox = $('#recent-searches').html()
-    $('#recent-searches').append(`<li><a class="dropdown-item" id="dropItem${y}" href="#">${thisCity} to ${thisDestCity}</a></li>`)
+    $('#recent-searches').append(`<li id="dropItem${y}"><a class="dropdown-item">${thisCity} to ${thisDestCity}</a></li>`)
     y++
   }
   
 }}
+var dropItemStartCity1 = localStorage.getItem('RecentStartCity1')
+var dropItemDestCity1 = localStorage.getItem('RecentDestCity1')
+$('#recent-searches').on("click", "#dropItem1",recallStoredCity)
 
-$('#dropitem1').click(localStorage.getItem('RecentStartCity1'),localStorage.getItem('RecentStartCity1'))
+function recallStoredCity() {
+  start = dropItemStartCity1
+  end = dropItemDestCity1
+  getStartCity(start,end)
 
-setTimeout(clearlocalStorageAlert,3000)
+}
+
+function checkingStartVals() {
+  if($('#startCity').val() !== '' && $('#destCity').val() !== '') {
+    checkStorage()
+  }
+
+}
+function checkIfThisIsStoredVal(start,end) {
+  if($('#startCity').val() == "" && $('#destCity').val() == "") {
+    start = localStorage.getItem('RecentStartCity1')
+    end =  localStorage.getItem('RecentDestCity1')
+    }
+    return start,end
+}
+
+
 
 submitBtn.click(getStartCity)
 
 function getStartCity(start,end) {
   start = $('#startCity').val()
   end = $('#destCity').val()
-  checkStorage()
+  checkingStartVals()
+  checkIfThisIsStoredVal(start,end)
   //insert checkStorage() logic test here.
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
