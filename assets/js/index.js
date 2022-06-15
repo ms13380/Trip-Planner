@@ -42,7 +42,9 @@ for (let i = 1; i <= 10; i++) {
   recentCityI = localStorage.getItem(`RecentStartCity${x}`)
   if(localStorage.getItem(`RecentStartCity${x}`) === null && jQuery.type(localStorage.getItem(`RecentStartCity${x}`)) !== "string" ) {
     localStorage.setItem(`RecentStartCity${x}`,start)
-    localStorage.setItem(`RecentDestCity${x}`,end)}
+    localStorage.setItem(`RecentDestCity${x}`,end)
+    break;
+  }
   else if(localStorage.getItem(`RecentStartCity${x}`) !== undefined && jQuery.type(localStorage.getItem(`RecentStartCity${x}`)) === "string" && localStorage.getItem(`RecentStartCity${x+1}`) !== "" && localStorage.getItem(`RecentStartCity${x+1}`) == undefined && jQuery.type(localStorage.getItem(`RecentStartCity${x+1}`) !== "string")) {
     localStorage.setItem(`RecentStartCity${x+1}`,start)
     localStorage.setItem(`RecentDestCity${x+1}`,end)
