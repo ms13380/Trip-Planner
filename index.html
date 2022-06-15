@@ -43,19 +43,19 @@
   </header>
 <!-- enter note for users: Please use a US city,state.-->
   <div class="container">
-    <div class="d-flex flex-row justify-content-around my-4"> 
+    <form class="row g-3"> 
+
+      <div class="col-md-6" id="from-input">
+        <label for="startCity" class="text-center"><strong>Coming From:</strong></label>
+        <input id="startCity" placeholder="Enter City" type="text" class="form-control">
+      </div>
       
-      <form class="" id="from-input">
-        <h3 class="text-center">Coming From:</h3>
-        <input id="startCity" placeholder="Enter City" type="text" class="form-control-lg">
-      </form>
+      <div class="col-md-6" id="too-input">
+        <label for="destCity" class="text-center"><strong>Destination:</strong></label>
+        <input id="destCity" placeholder="San Diego, CA" type="text" class="form-control">
+      </div>
       
-      <form class="" id="too-input">
-        <h3 class="text-center">Destination:</h3>
-        <input id="destCity" placeholder="San Diego, CA" type="text" class="form-control-lg">
-      </form>
-      
-    </div>
+    </form>
   </div> 
 
   <div class="d-flex flex-row justify-content-center my-4">

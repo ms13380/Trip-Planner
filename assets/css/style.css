@@ -81,3 +81,11 @@ body {
 .custom-dropdown {
     position: relative;
 }
+
+input, label {
+    display:block;
+}
+
+label {
+    font-size: 20px;
+}
