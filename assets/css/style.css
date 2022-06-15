@@ -5,6 +5,11 @@
     
 }
 
+.jumbotron {
+    background-image: url("../img/jumbotron.png");
+    background-size: cover;
+  }
+
 .mapouter{
     position:relative;
     text-align:right;
