@@ -20,22 +20,102 @@ var starCityText = $('#startCity').html()
 var startCityField = $('#startCity').val()
 showHideBtn()
 function showHideBtn() {
-  destAddress = $('#destCity').val()
-  startCityField = $('#startCity').val()
-  if(destAddress == "" || startCityField == "") {
+  startAddress = $('#destCity').val()
+  endAddress = $('#startCity').val()
+  if(startAddress == "" || endAddress == "") {
   submitBtn.addClass("d-none")
-} else if(destAddress.length > 0 && startCityField.length > 0 ) {
+} else if(startAddress.length > 0 && endAddress.length > 0 ) {
   submitBtn.removeClass("d-none")
   
  }}
-setInterval(showHideBtn,1000)
+setInterval(showHideBtn,2000)
 
+function checkStorage() {
+  var recentStorageLogic
+  var recentCity1 = localStorage.getItem("RecentStartCity1")
+  var x = 0
+  start = $('#startCity').val()
+  end = $('#destCity').val()
+for (let i = 1; i <= 10; i++) {
+  debugger;
+  x++
+  recentCityI = localStorage.getItem(`RecentStartCity${x}`)
+  if(localStorage.getItem(`RecentStartCity${x}`) === null && jQuery.type(localStorage.getItem(`RecentStartCity${x}`)) !== "string" ) {
+    localStorage.setItem(`RecentStartCity${x}`,start)
+    localStorage.setItem(`RecentDestCity${x}`,end)}
+  else if(jQuery.type(localStorage.getItem(`RecentStartCity${x}`)) === "string" && localStorage.getItem(`RecentStartCity${x+1}`) !== "" && localStorage.getItem(`RecentStartCity${x+1}`) == undefined && jQuery.type(localStorage.getItem(`RecentStartCity${x+1}`) !== "string")) {
+    localStorage.setItem(`RecentStartCity${x+1}`,start)
+    localStorage.setItem(`RecentDestCity${x+1}`,end)
+    break;
+  }
+  else {}
+
+}
+
+
+//RecentCity1 = ...
+//
+// RecentStartCity2, i = 2
+
+  
+  // if( localStorage.getItem("RecentStartCity1") == null) {
+  //   localStorage.setItem("RecentStartCity1",startCityField)
+  //   localStorage.setItem("RecentDestCity1",destAddress)
+  // } else if(recentCity1 !== "" && recentCity2 !== "") {
+  //   localStorage.setItem("RecentStartCity3", startCityField)
+  //   localStorage.setItem("RecentDestCity3",destAddress)
+  // }
+  // else if (localStorage.getItem("RecentStartCity1") !== "") {
+  //   localStorage.setItem("RecentStartCity2", startCityField)
+  //   localStorage.setItem("RecentDestCity2",destAddress)
+  // } else if (localStorage.getItem("RecentStartCity2") !== "") {
+  //   localStorage.setItem("RecentStartCity3", startCityField)
+  //   localStorage.setItem("RecentDestCity3",destAddress)
+  // } else if(localStorage.getItem("RecentStartCity3") !== "") {
+  //   localStorage.setItem("RecentStartCity4", startCityField)
+  //   localStorage.setItem("RecentDestCity4",destAddress)
+  // } else if(localStorage.getItem("RecentStartCity4") !== "") {
+  //   localStorage.setItem("RecentStartCity5", startCityField)
+  //   localStorage.setItem("RecentDestCity5",destAddress)
+  // } else {}
+$('#localStorageAlert').html(`<p>&#x1f44d; successfully saved to storage.</p>`)
+clearlocalStorageAlert()
+}
+function clearlocalStorageAlert() {
+  $('#localStorageAlert').html("")
+}
+
+$(document).ready(getLocalStorage())
+function getLocalStorage() {
+  var thisDestCity
+  var thisCity
+  let y =1
+for (let i = 0; i < localStorage.length; i+=2) {
+  debugger;
+  RecentStrtCity = `RecentStartCity${y}`
+  RecentDest = `RecentDestCity${y}`
+  thisCity = localStorage.getItem(RecentStrtCity)
+  thisDestCity = localStorage.getItem(RecentDest)
+  if(`RecentStartCity${y}` in localStorage) {
+    debugger;
+    var recentSearchBox = $('#recent-searches').html()
+    $('#recent-searches').append(`<li><a class="dropdown-item" id="dropItem${y}" href="#">${thisCity} to ${thisDestCity}</a></li>`)
+    y++
+  }
+  
+}}
+
+$('#dropitem1').click(localStorage.getItem('RecentStartCity1'),localStorage.getItem('RecentStartCity1'))
+
+setTimeout(clearlocalStorageAlert,3000)
 
 submitBtn.click(getStartCity)
-function getStartCity() {
 
-  startCityField = $('#startCity').val()
-  destAddress = $('#destCity').val()
+function getStartCity(start,end) {
+  start = $('#startCity').val()
+  end = $('#destCity').val()
+  checkStorage()
+  //insert checkStorage() logic test here.
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
   var mapOptions = {
@@ -45,8 +125,8 @@ function getStartCity() {
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsRenderer.setMap(map);
   directionsService.route( {
-    origin: startCityField,
-    destination: destAddress,
+    origin: start,
+    destination: end,
     travelMode: 'DRIVING'
   }, (directionsResult, directionsStatus) => {
     if(directionsStatus == "OK") {directionsRenderer.setDirections(directionsResult)
@@ -174,4 +254,4 @@ coordLongitude = data[0].lon;
 
 }
 
-$('#submitAddress').click(turqouise)
+// $('#submitAddress').click(turqouise)
