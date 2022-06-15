@@ -9,7 +9,7 @@
   <title>Trip Planner with weather</title>
   <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
@@ -30,16 +30,12 @@
 
   <header class="jumbotron bg-gradient-primary mt-0 pt-0 pb-5">
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
         Recent Searches
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" id="dropdownItem0" href="#">Recent Search 1</a>
-        <a class="dropdown-item" id="dropdownItem1" href="#">Recent Search 2</a>
-        <a class="dropdown-item" id="dropdownItem2" href="#">Recent Search 3</a>
-        <a class="dropdown-item" id="dropdownItem3" href="#">Recent Search 4</a>
-        <a class="dropdown-item" id="dropdownItem4" href="#">Recent Search 5</a>
-      </div>
+      <ul class="dropdown-menu custom-dropdown" id="recent-searches" aria-labelledby="dropdownMenu2">
+        
+      </ul>
     </div>
 
     <h1 style="text-align:center;font-family:'Roboto';color:#000000;">Your Trip</h1>
@@ -64,6 +60,7 @@
 
   <div class="d-flex flex-row justify-content-center my-4">
     <div class="justify-content-center">
+      <div id="localStorageAlert"></div>
       <button id="submitBtn" class="button" style="vertical-align:middle; font-family: 'Roboto'"><span>Let's Go! </span></button>
     </div>
   </div>
@@ -191,6 +188,7 @@
 </div>
   </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW3oMEhRXjU69EfrjDpF97lFWqcv8fZyw&callback=initMap&v=weekly"
       defer></script>
