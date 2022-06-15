@@ -115,9 +115,9 @@ var dropItemDestCity1 = localStorage.getItem('RecentDestCity1')
 $('#recent-searches').on("click", "#dropItem1",recallStoredCity)
 
 function recallStoredCity() {
-  var recalledCity = dropItemStartCity1
-  var recalledDest = dropItemDestCity1
-  getStartCity(recalledCity,recalledDest)
+  start = dropItemStartCity1
+  end = dropItemDestCity1
+  getStartCity(start,end)
 
 }
 
@@ -127,12 +127,11 @@ function checkingStartVals() {
   }
 
 }
-function checkIfThisIsStoredVal() {
+function checkIfThisIsStoredVal(start,end) {
   if($('#startCity').val() == "" && $('#destCity').val() == "") {
     start = localStorage.getItem('RecentStartCity1')
-    end = localStorage.getItem('RecentDestCity1')
-    return start,end
-    } 
+    end =  localStorage.getItem('RecentDestCity1')
+    }
     return start,end
 }
 
@@ -144,8 +143,7 @@ function getStartCity(start,end) {
   start = $('#startCity').val()
   end = $('#destCity').val()
   checkingStartVals()
-  checkIfThisIsStoredVal()
-
+  checkIfThisIsStoredVal(start,end)
   //insert checkStorage() logic test here.
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
