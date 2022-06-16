@@ -5,6 +5,7 @@
 
 let latCoord
 let longCoord
+
 var destAddress = $('#destCity').val()
 var submitBtn = $('#submitBtn')
 var directionsService
@@ -53,6 +54,8 @@ for (let i = 1; i <= 10; i++) {
   else {}
 
 }
+$('#localStorageAlert').html(`<p>&#x1f44d; successfully saved to storage.</p>`)
+
 
 
 //RecentCity1 = ...
@@ -80,8 +83,9 @@ for (let i = 1; i <= 10; i++) {
   //   localStorage.setItem("RecentStartCity5", startCityField)
   //   localStorage.setItem("RecentDestCity5",destAddress)
   // } else {}
-$('#localStorageAlert').html(`<p>&#x1f44d; successfully saved to storage.</p>`)
+
 clearlocalStorageAlert()
+setTimeout(clearlocalStorageAlert,5000)
 }
 function clearlocalStorageAlert() {
   $('#localStorageAlert').html("")
@@ -101,22 +105,98 @@ for (let i = 0; i < localStorage.length; i+=2) {
   if(`RecentStartCity${y}` in localStorage) {
     debugger;
     var recentSearchBox = $('#recent-searches').html()
-    $('#recent-searches').append(`<li><a class="dropdown-item" id="dropItem${y}" href="#">${thisCity} to ${thisDestCity}</a></li>`)
+    $('#recent-searches').append(`<li id="dropItem${y}"><a class="dropdown-item" id="${y}">${thisCity} to ${thisDestCity}</a></li>`)
     y++
   }
   
 }}
+var dropItemStartCity1 = localStorage.getItem('RecentStartCity1')
+var dropItemDestCity1 = localStorage.getItem('RecentDestCity1')
+$('#recent-searches').on("click", "li", function(e) {
+  console.log(e.target)
+  startingPoint = localStorage.getItem(`RecentStartCity${e.target.id}`)
+  endingPoint = localStorage.getItem(`RecentDestCity${e.target.id}`)
+  debugger;
+  pullStartCityFromStorage(startingPoint,endingPoint)
+})
 
-$('#dropitem1').click(localStorage.getItem('RecentStartCity1'),localStorage.getItem('RecentStartCity1'))
+function recallStoredCity() {
+  getStartCity(dropItemStartCity1,dropItemStartCity1)
 
-setTimeout(clearlocalStorageAlert,3000)
+}
 
+function checkingStartVals() {
+  if($('#startCity').val() !== '' && $('#destCity').val() !== '') {
+    checkStorage()
+  }
+
+}
+function checkIfThisIsStoredVal(start,end) {
+  if($('#startCity').val() == "" && $('#destCity').val() == "") {
+    start = localStorage.getItem('RecentStartCity1')
+    end =  localStorage.getItem('RecentDestCity1')
+    }
+    return start,end
+}
+
+
+var start = $('#startCity').val()
+var end = $('#destCity').val()
 submitBtn.click(getStartCity)
 
-function getStartCity(start,end) {
-  start = $('#startCity').val()
-  end = $('#destCity').val()
-  checkStorage()
+function pullStartCityFromStorage(start,end) {
+  debugger;
+  checkingStartVals()
+  // checkIfThisIsStoredVal()
+  //insert checkStorage() logic test here.
+  const directionsService = new google.maps.DirectionsService();
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  var mapOptions = {
+    zoom:7,
+    center: { lat: -34.397, lng: 150.644 }
+  }
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsRenderer.setMap(map);
+  directionsService.route( {
+    origin: start,
+    destination: end,
+    travelMode: 'DRIVING'
+  }, (directionsResult, directionsStatus) => {
+    if(directionsStatus == "OK") {directionsRenderer.setDirections(directionsResult)
+  }
+  var routesArray = directionsResult.routes[0].legs
+  var directionsDiv = $('#directions')
+  var legsArray = routesArray[0].steps
+  var stepsArray = directionsResult.routes[0].legs[0].steps
+  var totalDist = directionsResult.routes[0].legs[0].distance.text
+  var totalDuration = directionsResult.routes[0].legs[0].duration.text
+  var instrArray = stepsArray[0]
+  debugger;
+  console.log(instrArray)
+  for(var i = 0; i < stepsArray.length - 1; i++) {
+    var ptag = $('#directions').append("<p>")
+    var distanceTraveled = stepsArray[i].distance.text
+    var eachDirection = stepsArray[i].instructions
+    $('#directions').append(`<p>
+    ${eachDirection} for ${distanceTraveled}
+      </p>`
+    )
+    $('#directions').addClass("bg-light")
+    $('#directions').addClass("directions")
+    $('html, body').animate({
+      scrollTop: $("#directions").offset().top
+  },"fast");
+  }
+  const distanceButton = document.createElement("button");
+  distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
+  distanceButton.classList.add("btn")
+  distanceButton.classList.add("btn-primary")
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(distanceButton);
+  })}
+
+function getStartCity() {
+  checkingStartVals()
+  // checkIfThisIsStoredVal()
   //insert checkStorage() logic test here.
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -151,9 +231,10 @@ function getStartCity(start,end) {
       </p>`
     )
     $('#directions').addClass('bg-light')
+    $('#directions').addClass("directions")
     $('html, body').animate({
       scrollTop: $("#directions").offset().top
-  });
+  },"fast");
   }
   const distanceButton = document.createElement("button");
   distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
