@@ -54,6 +54,8 @@ for (let i = 1; i <= 10; i++) {
   else {}
 
 }
+$('#localStorageAlert').html(`<p>&#x1f44d; successfully saved to storage.</p>`)
+
 
 
 //RecentCity1 = ...
@@ -81,10 +83,9 @@ for (let i = 1; i <= 10; i++) {
   //   localStorage.setItem("RecentStartCity5", startCityField)
   //   localStorage.setItem("RecentDestCity5",destAddress)
   // } else {}
-$('#localStorageAlert').html(`<p>&#x1f44d; successfully saved to storage.</p>`)
 
 clearlocalStorageAlert()
-setTimeout(clearlocalStorageAlert,4000)
+setTimeout(clearlocalStorageAlert,5000)
 }
 function clearlocalStorageAlert() {
   $('#localStorageAlert').html("")
@@ -180,10 +181,11 @@ function pullStartCityFromStorage(start,end) {
     ${eachDirection} for ${distanceTraveled}
       </p>`
     )
-    $('#directions').addClass('bg-light')
+    $('#directions').addClass("bg-light")
+    $('#directions').addClass("directions")
     $('html, body').animate({
       scrollTop: $("#directions").offset().top
-  });
+  },"fast");
   }
   const distanceButton = document.createElement("button");
   distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
@@ -229,9 +231,10 @@ function getStartCity() {
       </p>`
     )
     $('#directions').addClass('bg-light')
+    $('#directions').addClass("directions")
     $('html, body').animate({
       scrollTop: $("#directions").offset().top
-  });
+  },"fast");
   }
   const distanceButton = document.createElement("button");
   distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
