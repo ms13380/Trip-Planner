@@ -1,11 +1,12 @@
 var APIKey = "85b081d82a8b2923ac904659cddb3896";
-var city = "Atlanta, US";
+var city = "San Diego, US";
 var letsgoBtn = $('#letsgo')
 var icon1 = $('#icon1')
 var icon2 = $('#icon2')
 var icon3 = $('#icon3')
 var icon4 = $('#icon4')
 var icon5 = $('#icon5')
+
 
 submitBtn.click(getStartweather);
 
@@ -164,29 +165,39 @@ function Updateweather(data) {
           }
 }
 
+
+
 //after click the button display the destination weather in the cards
 function getStartweather() {
     console.log("Get Weather Function")
     //card1City.val() = "Finish!!!";
     var destweather = $('#destCity').val()
-    console.log(destweather)
+    destweather = destweather.split(",")[0];
+    //console.log(destweather.split(' ').length)
+    //console.log()
+    //console.log(destweather)
     if (destweather == ""){
-        alert("Write something on Destination")
-    }else{
-        console.log(destweather)
-        var ForecastW = "https://api.openweathermap.org/data/2.5/forecast?q=" + destweather + "&appid=" + APIKey+"&units=imperial";
-        $.ajax({
-            url: ForecastW,
-            method: "GET",
-            dataType: "json"
-        }).then(function(data) {
-            // push the weather values for cards
-            Updateweather(data)
-            console.log("Update Weather")
-
-        });
-       
+        console.log("is Empty")
     }
+    if ( destweather.split(',').length > 0) {
+        console.log(destweather.split(',')[0])
+        destweather = destweather.split(',')[0]
+           //console.log(destweather)
+           var ForecastW = "https://api.openweathermap.org/data/2.5/forecast?q=" + destweather + "&appid=" + APIKey+"&units=imperial";
+           $.ajax({
+               url: ForecastW,
+               method: "GET",
+               dataType: "json"
+           }).then(function(data) {
+               // push the weather values for cards
+               Updateweather(data)
+               console.log("Update Weather")
+   
+           });
+        //console.log(destweather)
+    }
+   
+
     
       
    
