@@ -1,3 +1,4 @@
+// Dates for Cards - Moment.js
 var currentDay = $("#1")
 
 // Expanded Forecast

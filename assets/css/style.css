@@ -6,8 +6,35 @@
 }
 
 .jumbotron {
-    background-image: url("../img/jumbotron.png");
+    background-image: url(https://media.giphy.com/media/KESFIloxNjxGzIJIn7/giphy.gif);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .un-pack {
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 85px;
+    background: url(https://media.giphy.com/media/KESFIloxNjxGzIJIn7/giphy.gif);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip:text;
+  }
+  
+  .app-header {
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 700px;
+    height: 175px;
+    background-color: black;
+    border-radius: 20px;
   }
 
 .mapouter{
@@ -33,6 +60,7 @@ body {
   padding: 0;
 }
 
+/* Let's Go Button */
 .button {
     display: inline-block;
     border-radius: 10px;
@@ -87,6 +115,7 @@ body {
     position: relative;
 }
 
+/* Travel Input Boxes */
 #startCity, 
 #destCity,
 label {
@@ -217,7 +246,6 @@ label {
     position: fixed;
     top: 0;
     left: 0;
-  
     opacity: 0;
     width: 0;
     height: 0;
@@ -255,11 +283,4 @@ label {
     width: 70vw;
     height: 30vh;
     overflow:scroll;
-}
-
-.un-pack {
-  font-family: 'Bebas Neue', cursive;
-  font-family: 'Oswald', sans-serif;
-  text-align: center;
-  font-size: 60px;
 }
