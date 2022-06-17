@@ -138,10 +138,11 @@ label {
     font-size: 20px;
 }
 
+/* Begin of menu elements */
 :root {
     --primary: #ffce00;
     --secondary: #171717;
-    --light: #f3f3f3;
+    --light: #fffbfb;
     --dark: #0000cd;
     --font-stack: 'Roboto', 'Helvetica', sans-serif;
   }
@@ -164,7 +165,7 @@ label {
     padding: 15px;
     box-sizing: border-box;
   }
-  
+  /* keeping the wrapper/background connected to the wording */
   .menu-wrapper {
     position: fixed;
     top: 15px;
@@ -174,6 +175,8 @@ label {
     box-sizing: border-box;
   }
   
+  /* check box hidden rules*/
+
   .menu-wrapper .toggle {
     position: absolute;
     width: 50px;
@@ -209,7 +212,7 @@ label {
     transition: all 0.3s ease;
   }
   
-  
+  /* menu wrapper hamburger and bar */
   .menu-wrapper .hamburger .bar {
     position: relative;
     width: 100%;
@@ -234,6 +237,7 @@ label {
     top: 10px;
   }
   
+  /* hover wobble degrees for for hamburger */
   .menu-wrapper .toggle:hover + .hamburger {
     transform: rotate(-25deg);
     background: rbga (255, 255, 255, 0.1);
@@ -262,9 +266,9 @@ label {
     width: 0;
     height: 0;
     overflow: hidden;
-    background: rgba(27, 146, 37, 0.836);
+    background: var(--light);
     z-index: 1;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -281,6 +285,8 @@ label {
     border-bottom: 2px solid transparent;
   }
   
+/* hovering over turns the menu yellow */
+
   .menu ul li:hover {
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
@@ -288,8 +294,8 @@ label {
   
   .menu-wrapper .toggle:checked + .hamburger +.menu {
     opacity: 1;
-    width: 100vw;
-    height: 100vh;
+    width: 37vw;
+    height: 30vh;
   }
 .directions {
     width: 70vw;
