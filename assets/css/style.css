@@ -20,7 +20,19 @@
     font-family: 'Bebas Neue', cursive;
     font-family: 'Oswald', sans-serif;
     text-align: center;
-    font-size: 85px;
+    margin-top: 15px;
+    font-size: 60px;
+    background: url(https://media.giphy.com/media/KESFIloxNjxGzIJIn7/giphy.gif);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip:text;
+  }
+
+  .un-pack-sm {
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
     background: url(https://media.giphy.com/media/KESFIloxNjxGzIJIn7/giphy.gif);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -31,7 +43,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 30px;
-    width: 700px;
+    width: 500px;
     height: 175px;
     background-color: black;
     border-radius: 20px;
