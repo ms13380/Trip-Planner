@@ -24,7 +24,7 @@ git clone https://github.com/ms13380/Trip-Planner
 ## Description
 
 - Trip Planner is an application to get the direction and weather for your next destination!!!
-- 
+- To use the application, just
 - 
 - 
 - 

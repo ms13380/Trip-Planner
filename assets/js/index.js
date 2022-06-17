@@ -1,7 +1,4 @@
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
+
 
 let latCoord
 let longCoord
@@ -57,32 +54,6 @@ for (let i = 1; i <= 10; i++) {
 $('#localStorageAlert').html(`<p>&#x1f44d; successfully saved to storage.</p>`)
 
 
-
-//RecentCity1 = ...
-//
-// RecentStartCity2, i = 2
-
-  
-  // if( localStorage.getItem("RecentStartCity1") == null) {
-  //   localStorage.setItem("RecentStartCity1",startCityField)
-  //   localStorage.setItem("RecentDestCity1",destAddress)
-  // } else if(recentCity1 !== "" && recentCity2 !== "") {
-  //   localStorage.setItem("RecentStartCity3", startCityField)
-  //   localStorage.setItem("RecentDestCity3",destAddress)
-  // }
-  // else if (localStorage.getItem("RecentStartCity1") !== "") {
-  //   localStorage.setItem("RecentStartCity2", startCityField)
-  //   localStorage.setItem("RecentDestCity2",destAddress)
-  // } else if (localStorage.getItem("RecentStartCity2") !== "") {
-  //   localStorage.setItem("RecentStartCity3", startCityField)
-  //   localStorage.setItem("RecentDestCity3",destAddress)
-  // } else if(localStorage.getItem("RecentStartCity3") !== "") {
-  //   localStorage.setItem("RecentStartCity4", startCityField)
-  //   localStorage.setItem("RecentDestCity4",destAddress)
-  // } else if(localStorage.getItem("RecentStartCity4") !== "") {
-  //   localStorage.setItem("RecentStartCity5", startCityField)
-  //   localStorage.setItem("RecentDestCity5",destAddress)
-  // } else {}
 
 clearlocalStorageAlert()
 setTimeout(clearlocalStorageAlert,5000)
@@ -145,9 +116,9 @@ var end = $('#destCity').val()
 submitBtn.click(getStartCity)
 
 function pullStartCityFromStorage(start,end) {
-  debugger;
+
   checkingStartVals()
-  // checkIfThisIsStoredVal()
+
   //insert checkStorage() logic test here.
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -171,7 +142,7 @@ function pullStartCityFromStorage(start,end) {
   var totalDist = directionsResult.routes[0].legs[0].distance.text
   var totalDuration = directionsResult.routes[0].legs[0].duration.text
   var instrArray = stepsArray[0]
-  debugger;
+
   console.log(instrArray)
   for(var i = 0; i < stepsArray.length - 1; i++) {
     var ptag = $('#directions').append("<p>")
@@ -202,7 +173,7 @@ function getStartCity() {
   const directionsRenderer = new google.maps.DirectionsRenderer();
   var mapOptions = {
     zoom:7,
-    center: { lat: -34.397, lng: 150.644 }
+    center: { lat: 38.9072, lng: 77.0369 }
   }
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsRenderer.setMap(map);
@@ -212,6 +183,9 @@ function getStartCity() {
     travelMode: 'DRIVING'
   }, (directionsResult, directionsStatus) => {
     if(directionsStatus == "OK") {directionsRenderer.setDirections(directionsResult)
+  } else { 
+    console.log("Something went wrong with rendering directions!")
+
   }
   var routesArray = directionsResult.routes[0].legs
   var directionsDiv = $('#directions')
@@ -245,8 +219,8 @@ function getStartCity() {
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom:10,
+    center: { lat: 38.9072, lng: -77.0369 },
+    zoom:7,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   infoWindow = new google.maps.InfoWindow();
