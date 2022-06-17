@@ -3,6 +3,8 @@ var startAddress = $('#startCity').val()
 var submitBtn = $('#submitBtn')
 var cityName = endAddress.split(",")[0];
 var  date 
+
+// Dates for Cards - Moment.js
 var currentDay = $("#1")
 // Expanded Forecast
 var secondDay = $("#2")
