@@ -13,21 +13,39 @@ submitBtn.click(getStartweather);
 // Default Location will match geo Location for maps 
 $( document ).ready(function() {
     // adding local storage read last city
-    var tabledata = localStorage.getItem("TripKey");
+    var tabledata = localStorage.getItem("tripdata");
     if (tabledata !== null){
         const TripKey = JSON.parse(tabledata);
         console.log(TripKey)
-    }
 
-$.ajax({
-    url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey+"&units=imperial",
-    method: "GET",
-    dataType: "json"
-}).then(function(data) {
-    Updateweather(data)
-  
+        $.ajax({
+            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey+"&units=imperial",
+            method: "GET",
+            dataType: "json"
+        }).then(function(data) {
+            Updateweather(data)
+
+        });
+    }
 });
-});
+
+$('#recent-searches').on("click", "li", function(w) {
+    
+    var destinationpt = localStorage.getItem(`RecentDestCity${w.target.id}`)
+    console.log(destinationpt)
+    destinationpt = destinationpt.split(",")[0];
+    
+    console.log(`this is the endpoint: ${destinationpt}`)
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + destinationpt + "&appid=" + APIKey+"&units=imperial",
+        method: "GET",
+        dataType: "json"
+    }).then(function(data) {
+        Updateweather(data)
+
+    });
+    //pullStartCityFromStorage(startingPoint,endingPoint)
+  })
 
 
 function Updateweather(data) {
