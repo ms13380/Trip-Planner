@@ -1,7 +1,6 @@
-# Trip-Planner
+# UnPack App
 This application is designed to help the client plan the most efficent trip between locations to save gas and time.
-By selecting what day they would like to take their trip and the locations they would like to visit,
-the application is able to create an efficient path for them to follow.
+By selecting where they are and where they would like to visit, the application is able to create an efficient path for them to follow.
 
 ## Locations 
 
@@ -23,25 +22,18 @@ git clone https://github.com/ms13380/Trip-Planner
 
 ## Description
 
-- Trip Planner is an application to get the direction and weather for your next destination!!!
+#### Unpack is an application to get the Directions, Distance, and Weather for your next destination!!!
+
 - To use the application, just
-- 
-- 
-- 
-- 
-
-## How map works
-
--
--
-
-
+- Enter Your City
+- Enter Your Destination
+- And Let's Go!
 
 
 
 ## Screenshoots
 
-![My animated logo](./assets/readme-pics/overview.png)
+![Trip GIF](./assets/img/FinalTrip.gif)
 
 ## Conclusion 
 
