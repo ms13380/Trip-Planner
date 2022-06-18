@@ -154,10 +154,10 @@ function pullStartCityFromStorage(start,end) {
     )
     $('#directions').addClass("bg-light")
     $('#directions').addClass("directions")
-    $('html, body').animate({
-      scrollTop: $("#directions").offset().top
-  },"fast");
   }
+  $('html, body').animate({
+    scrollTop: $("#directions").offset().top
+},"fast");
   const distanceButton = document.createElement("button");
   distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
   distanceButton.classList.add("btn")
@@ -187,6 +187,7 @@ function getStartCity() {
     console.log("Something went wrong with rendering directions!")
 
   }
+  
   var routesArray = directionsResult.routes[0].legs
   var directionsDiv = $('#directions')
   var legsArray = routesArray[0].steps
@@ -206,10 +207,11 @@ function getStartCity() {
     )
     $('#directions').addClass('bg-light')
     $('#directions').addClass("directions")
-    $('html, body').animate({
-      scrollTop: $("#directions").offset().top
-  },"fast");
+    
   }
+  $('html, body').animate({
+    scrollTop: $("#directions").offset().top
+},"fast");
   const distanceButton = document.createElement("button");
   distanceButton.innerHTML = `${totalDist}<br>${totalDuration}`;
   distanceButton.classList.add("btn")

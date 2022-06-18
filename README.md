@@ -30,6 +30,10 @@ git clone https://github.com/ms13380/Trip-Planner
 - 
 - 
 
+## How map works
+
+-
+-
 
 
 
