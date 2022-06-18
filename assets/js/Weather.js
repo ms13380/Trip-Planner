@@ -15,8 +15,7 @@ $( document ).ready(function() {
     // adding local storage read last city
     var tabledata = localStorage.getItem("tripdata");
     if (tabledata !== null){
-        const TripKey = JSON.parse(tabledata);
-        console.log(TripKey)
+        
 
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey+"&units=imperial",
@@ -32,10 +31,9 @@ $( document ).ready(function() {
 $('#recent-searches').on("click", "li", function(w) {
     
     var destinationpt = localStorage.getItem(`RecentDestCity${w.target.id}`)
-    console.log(destinationpt)
+  
     destinationpt = destinationpt.split(",")[0];
     
-    console.log(`this is the endpoint: ${destinationpt}`)
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/forecast?q=" + destinationpt + "&appid=" + APIKey+"&units=imperial",
         method: "GET",
@@ -51,7 +49,7 @@ $('#recent-searches').on("click", "li", function(w) {
 function Updateweather(data) {
         var citytitle = data['city']['name']
           // push the weather values for cards
-          console.log(data)
+          
           if (data !== null){
             day1 = data['list'][0]
             day2 = data['list'][12]
@@ -90,7 +88,7 @@ function Updateweather(data) {
             looks4City.text(day4['weather'][0]['main'])
             looks5City.text(day5['weather'][0]['main'])
 
-            console.log(day1['weather'][0]['icon'])
+        
             icon1.attr("src", `https://openweathermap.org/img/wn/${day1['weather'][0]['icon']}@2x.png`)
             icon2.attr("src", `https://openweathermap.org/img/wn/${day2['weather'][0]['icon']}@2x.png`)
             icon3.attr("src", `https://openweathermap.org/img/wn/${day3['weather'][0]['icon']}@2x.png`)
@@ -155,29 +153,29 @@ function Updateweather(data) {
                 weatherstatus5 = "./assets/img/sunny.png"
             }
 
-            ctemp0.innerHTML= `Current Temp: <strong>${day1['main'].temp}°C</strong></p>
-            <p>Feels like: <strong>${day1['main'].feels_like}°F</strong></p>
-            <p>Max: <strong>${day1['main'].temp_max}°F</strong>, Min: <strong>${day1['main'].temp_min}°F</strong></p>
+            ctemp0.innerHTML= `Current Temp: <strong>${Math.round(day1['main'].temp)}°F</strong></p>
+            <p>Feels like: <strong>${Math.round(day1['main'].feels_like)}°F</strong></p>
+            <p>Max: <strong>${Math.round(day1['main'].temp_max)}°F</strong>,<br> Min: <strong>${Math.round(day1['main'].temp_min)}°F</strong></p>
             <img class="card-img-top" src="${weatherstatus1}" alt="Card image cap" width="auto" height="120px">`
             
-            ctemp1.innerHTML= `Current Temp: <strong>${day2['main'].temp}°F</strong></p>
-            <p>Feels like: <strong>${day2['main'].feels_like}°F</strong></p>
-            <p>Max: <strong>${day2['main'].temp_max}°F</strong>, Min: <strong>${day2['main'].temp_min}°F</strong></p>
+            ctemp1.innerHTML= `Current Temp: <strong>${Math.round(day2['main'].temp)}°F</strong></p>
+            <p>Feels like: <strong>${Math.round(day2['main'].feels_like)}°F</strong></p>
+            <p>Max: <strong>${Math.round(day2['main'].temp_max)}°F</strong>,<br> Min: <strong>${Math.round(day2['main'].temp_min)}°F</strong></p>
             <img class="card-img-top" src="${weatherstatus2}" alt="Card image cap" width="auto" height="120px">`
             
-            ctemp2.innerHTML= `Current Temp: <strong>${day3['main'].temp}°F</strong></p>
-            <p>Feels like: <strong>${day3['main'].feels_like}°F</strong></p>
-            <p>Max: <strong>${day3['main'].temp_max}°F</strong>, Min: <strong>${day3['main'].temp_min}°F</strong></p>
+            ctemp2.innerHTML= `Current Temp: <strong>${Math.round(day3['main'].temp)}°F</strong></p>
+            <p>Feels like: <strong>${Math.round(day3['main'].feels_like)}°F</strong></p>
+            <p>Max: <strong>${Math.round(day3['main'].temp_max)}°F</strong>,<br> Min: <strong>${Math.round(day3['main'].temp_min)}°F</strong></p>
             <img class="card-img-top" src="${weatherstatus3}" alt="Card image cap" width="auto" height="120px">`
             
-            ctemp3.innerHTML= `Current Temp: <strong>${day4['main'].temp}°F</strong></p>
-            <p>Feels like: <strong>${day4['main'].feels_like}°F</strong></p>
-            <p>Max: <strong>${day4['main'].temp_max}°F</strong>, Min: <strong>${day4['main'].temp_min}°F</strong></p>
+            ctemp3.innerHTML= `Current Temp: <strong>${Math.round(day4['main'].temp)}°F</strong></p>
+            <p>Feels like: <strong>${Math.round(day4['main'].feels_like)}°F</strong></p>
+            <p>Max: <strong>${Math.round(day4['main'].temp_max)}°F</strong>,<br> Min: <strong>${Math.round(day4['main'].temp_min)}°F</strong></p>
             <img class="card-img-top" src="${weatherstatus4}" alt="Card image cap" width="auto" height="120px">`
             
-            ctemp4.innerHTML= `Current Temp: <strong>${day5['main'].temp}°F</strong></p>
-            <p>Feels like: <strong>${day5['main'].feels_like}°F</strong></p>
-            <p>Max: <strong>${day5['main'].temp_max}°F</strong>, Min: <strong>${day5['main'].temp_min}°F</strong></p>
+            ctemp4.innerHTML= `Current Temp: <strong>${Math.round(day5['main'].temp)}°F</strong></p>
+            <p>Feels like: <strong>${Math.round(day5['main'].feels_like)}°F</strong></p>
+            <p>Max: <strong>${Math.round(day5['main'].temp_max)}°F</strong>,<br> Min: <strong>${Math.round(day5['main'].temp_min)}°F</strong></p>
             <img class="card-img-top" src="${weatherstatus5}" alt="Card image cap" width="auto" height="120px">`
             
           }
@@ -187,20 +185,14 @@ function Updateweather(data) {
 
 //after click the button display the destination weather in the cards
 function getStartweather() {
-    console.log("Get Weather Function")
-    //card1City.val() = "Finish!!!";
+
     var destweather = $('#destCity').val()
     destweather = destweather.split(",")[0];
-    //console.log(destweather.split(' ').length)
-    //console.log()
-    //console.log(destweather)
-    if (destweather == ""){
-        console.log("is Empty")
-    }
+
     if ( destweather.split(',').length > 0) {
-        console.log(destweather.split(',')[0])
+  
         destweather = destweather.split(',')[0]
-           //console.log(destweather)
+       
            var ForecastW = "https://api.openweathermap.org/data/2.5/forecast?q=" + destweather + "&appid=" + APIKey+"&units=imperial";
            $.ajax({
                url: ForecastW,
@@ -209,10 +201,10 @@ function getStartweather() {
            }).then(function(data) {
                // push the weather values for cards
                Updateweather(data)
-               console.log("Update Weather")
+              
    
            });
-        //console.log(destweather)
+       
     }
    
 

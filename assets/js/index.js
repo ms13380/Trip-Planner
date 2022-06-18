@@ -84,7 +84,7 @@ for (let i = 0; i < localStorage.length; i+=2) {
 var dropItemStartCity1 = localStorage.getItem('RecentStartCity1')
 var dropItemDestCity1 = localStorage.getItem('RecentDestCity1')
 $('#recent-searches').on("click", "li", function(e) {
-  console.log(e.target)
+  
   startingPoint = localStorage.getItem(`RecentStartCity${e.target.id}`)
   endingPoint = localStorage.getItem(`RecentDestCity${e.target.id}`)
   debugger;
@@ -143,7 +143,7 @@ function pullStartCityFromStorage(start,end) {
   var totalDuration = directionsResult.routes[0].legs[0].duration.text
   var instrArray = stepsArray[0]
 
-  console.log(instrArray)
+ 
   for(var i = 0; i < stepsArray.length - 1; i++) {
     var ptag = $('#directions').append("<p>")
     var distanceTraveled = stepsArray[i].distance.text
@@ -196,7 +196,7 @@ function getStartCity() {
   var totalDuration = directionsResult.routes[0].legs[0].duration.text
   var instrArray = stepsArray[0]
   debugger;
-  console.log(instrArray)
+ 
   for(var i = 0; i < stepsArray.length - 1; i++) {
     var ptag = $('#directions').append("<p>")
     var distanceTraveled = stepsArray[i].distance.text
@@ -279,8 +279,7 @@ function turqouise() {
   cityName = selectedCity.split(",")[0];
   stateName = selectedCity.split(",")[1];
 
-  console.log(cityName)
-  console.log(stateName)
+
  coordApiRequest = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateName}$"&appid=5e4e76067c9efbd530372ae03978df87`
 
 fetch(coordApiRequest)
@@ -288,8 +287,7 @@ fetch(coordApiRequest)
   return response.json();
 })
 .then(function(data) {
-  console.log(data);
-console.log(data[0])
+
 coordLatitude = data[0].lat;
 coordLongitude = data[0].lon;
 })
