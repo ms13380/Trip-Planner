@@ -20,6 +20,13 @@ git clone https://github.com/ms13380/Trip-Planner
 
 3. You can Follow this link to see the live page in GitHub : https://ms13380.github.io/Trip-Planner/
 
+## Menu Design
+1. The hamburger menu utilizes html and css to give the user their recent destination searches.
+
+2. The menu was coded to be unintrusive by being hidden when not in use to allow the user to experience the full layout of our website. Yet, with a simple tap to the menu, the information it holds is easily deployed.
+
+
+
 
 ## Description
 
@@ -27,9 +34,7 @@ git clone https://github.com/ms13380/Trip-Planner
 - 
 - 
 - 
-- 
-- 
-
+-
 
 
 
